@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "darklight",
+	"version": "${version}",
+	"name": "Darklight",
+	"description": "For there to be light, there must be darkness.",
+	"authors": [
+		"Taioku"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT License",
+	"icon": "assets/darklight/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.taioku.darklight.Darklight"
+		],
+		"client": [
+			"net.taioku.darklight.DarklightClient"
+		]
+	},
+	"mixins": [
+		"darklight.mixins.json",
+		{
+			"config": "darklight.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
