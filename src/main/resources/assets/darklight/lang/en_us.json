@@ -1,0 +1,7 @@
+{
+  "item.darklight.tome" : "Tome",
+  "item.darklight.lost_page" : "lost_page",
+  "item.darklight.lost_page_text" : "lost_page_text",
+
+  "itemGroup.darklight.tome": "Darklight"
+}
