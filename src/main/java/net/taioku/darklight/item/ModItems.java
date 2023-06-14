@@ -13,7 +13,7 @@ import net.taioku.darklight.Darklight;
 public class ModItems {
     public static final Item RAW_THUN = registerItem("raw_thun",
             new Item(new FabricItemSettings()));
-    public static final Item THUN = registerItem("thun",
+    public static final Item THUN = registerItem("thun_ingot",
             new Item(new FabricItemSettings()));
     public static final Item TOME = registerItem("tome",
             new Item(new FabricItemSettings()));

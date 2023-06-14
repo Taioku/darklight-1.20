@@ -14,6 +14,6 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.THUN_BLOCK);
         addDrop(ModBlocks.THUN_ORE, oreDrops(ModBlocks.THUN_ORE, ModItems.RAW_THUN));
-        addDrop(ModBlocks.THUN_ORE, oreDrops(ModBlocks.DEEPSLATE_THUN_ORE, ModItems.RAW_THUN));
+        addDrop(ModBlocks.DEEPSLATE_THUN_ORE, oreDrops(ModBlocks.DEEPSLATE_THUN_ORE, ModItems.RAW_THUN));
     }
 }
