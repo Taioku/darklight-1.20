@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -16,13 +15,13 @@ public class ModItems {
             new Item(new FabricItemSettings()));
     public static final Item LOST_PAGE = registerItem("lost_page",
             new Item(new FabricItemSettings()));
-    public static final Item LOST_PAGE_TEXT = registerItem("lost_page_text",
+    public static final Item WRITTEN_LOST_PAGE = registerItem("lost_page_text",
             new Item(new FabricItemSettings()));
 
     public static void addItemsToItemGroup() {
         addToItemGroup(ModItemGroup.TOME, TOME);
         addToItemGroup(ModItemGroup.TOME, LOST_PAGE);
-        addToItemGroup(ModItemGroup.TOME, LOST_PAGE_TEXT);
+        addToItemGroup(ModItemGroup.TOME, WRITTEN_LOST_PAGE);
     }
 
     private static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {
