@@ -16,7 +16,7 @@ public class ModItems {
             new Item(new FabricItemSettings()));
     public static final Item LOST_PAGE = registerItem("lost_page",
             new Item(new FabricItemSettings()));
-public static final Item LOST_PAGE_TEXT = registerItem("lost_page_text",
+    public static final Item LOST_PAGE_TEXT = registerItem("lost_page_text",
             new Item(new FabricItemSettings()));
 
 

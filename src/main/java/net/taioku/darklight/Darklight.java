@@ -2,6 +2,7 @@ package net.taioku.darklight;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
 import org.slf4j.Logger;
@@ -19,5 +20,6 @@ public class Darklight implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroup.registerItemGroups();
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
