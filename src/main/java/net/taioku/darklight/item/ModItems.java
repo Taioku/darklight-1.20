@@ -11,6 +11,10 @@ import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 
 public class ModItems {
+    public static final Item RAW_THUN = registerItem("raw_thun",
+            new Item(new FabricItemSettings()));
+    public static final Item THUN = registerItem("thun",
+            new Item(new FabricItemSettings()));
     public static final Item TOME = registerItem("tome",
             new Item(new FabricItemSettings()));
     public static final Item LOST_PAGE = registerItem("lost_page",
@@ -19,6 +23,8 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static void addItemsToItemGroup() {
+        addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
+        addToItemGroup(ModItemGroup.DARKLIGHT, THUN);
         addToItemGroup(ModItemGroup.DARKLIGHT, TOME);
         addToItemGroup(ModItemGroup.DARKLIGHT, LOST_PAGE);
         addToItemGroup(ModItemGroup.DARKLIGHT, WRITTEN_LOST_PAGE);

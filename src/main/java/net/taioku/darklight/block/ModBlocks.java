@@ -16,8 +16,15 @@ import net.taioku.darklight.item.ModItemGroup;
 
 public class ModBlocks {
 
+    public static final Block THUN_ORE = registerBlock("thun_ore",
+            new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
+    public static final Block DEEPSLATE_THUN_ORE = registerBlock("deepslate_thun_ore",
+            new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
     public static final Block THUN_BLOCK = registerBlock("thun_block",
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
+
+
+
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:raw_thun_from_smelting_thun_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_thun_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "darklight:thun_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_thun_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:raw_thun_from_smelting_thun_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

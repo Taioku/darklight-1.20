@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "darklight:thun_ore",
+    "darklight:deepslate_thun_ore",
     "darklight:thun_block"
   ]
 }

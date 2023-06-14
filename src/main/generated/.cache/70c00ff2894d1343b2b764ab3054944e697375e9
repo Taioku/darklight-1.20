@@ -1,7 +1,14 @@
-// 1.20	2023-06-14T01:14:07.4115785	Darklight/Model Definitions
+// 1.20	2023-06-14T14:04:19.5808659	Darklight/Model Definitions
+17662aafe0185a3eccc5dc726979d4327f271fe2 assets\darklight\blockstates\deepslate_thun_ore.json
+8dbb7bc84ac512409f9b2abc6bdd667c9bfab2e2 assets\darklight\models\item\thun_ore.json
+fdecd7ffe43b671eeff12e349e8df7473afa6764 assets\darklight\blockstates\thun_ore.json
 0f775e84187cc8bb9c4227bf95fe1d6dae6d6397 assets\darklight\models\item\thun_block.json
+f9116bf3a6765768c6ecf0e4466474941cf987ff assets\darklight\models\item\deepslate_thun_ore.json
 55b0d434d68849cdfd0f7ff610673e0da999c33f assets\darklight\models\item\tome.json
 f3b8e4953ea60081b40218ce285d250984ba487d assets\darklight\models\item\written_lost_page.json
+e3480b5aa0040d9d33e589fe974369e4b7e47969 assets\darklight\models\item\thun.json
+5503b7f0cf2828f5f320a920a31b240abe97da41 assets\darklight\models\item\lost_page.json
+075171ad0bb5d193990984fd0ce8b8a39c031a3c assets\darklight\models\block\deepslate_thun_ore.json
 3b0e77027147012b9bf5d9282a11e049724bb612 assets\darklight\blockstates\thun_block.json
 82dd67056672eace40b5d05a89afa80874674507 assets\darklight\models\block\thun_block.json
-5503b7f0cf2828f5f320a920a31b240abe97da41 assets\darklight\models\item\lost_page.json
+33e87fb045dcdb512ffc2da3374c18990ef32813 assets\darklight\models\block\thun_ore.json

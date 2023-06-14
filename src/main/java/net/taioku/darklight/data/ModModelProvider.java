@@ -15,11 +15,14 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.THUN_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_THUN_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.THUN_BLOCK);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.THUN, Models.GENERATED);
         itemModelGenerator.register(ModItems.TOME, Models.GENERATED);
         itemModelGenerator.register(ModItems.LOST_PAGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WRITTEN_LOST_PAGE, Models.GENERATED);
