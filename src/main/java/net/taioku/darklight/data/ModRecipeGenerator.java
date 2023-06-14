@@ -20,10 +20,12 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOME)
                 .pattern("#P#")
-                .pattern("P#P")
+                .pattern("P#P") // Tome Recipe doesn't work
                 .pattern("#P#")
                 .input('#', Items.AIR)
                 .input('P', Items.PAPER)
+                .criterion(FabricRecipeProvider.hasItem(Items.PAPER),
+                        FabricRecipeProvider.conditionsFromItem(Items.PAPER))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.TOME)));
     }
 }

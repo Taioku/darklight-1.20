@@ -15,7 +15,7 @@ import net.taioku.darklight.block.ModBlocks;
 public class ModItemGroup {
     public static final RegistryKey<ItemGroup>
             DARKLIGHT = RegistryKey.of(RegistryKeys.ITEM_GROUP,
-            new Identifier(Darklight.MOD_ID, "tome_group"));
+            new Identifier(Darklight.MOD_ID, "darklight_group"));
 
     public static void registerItemGroups() {
         Registry.register(Registries.ITEM_GROUP, DARKLIGHT, FabricItemGroup.builder()

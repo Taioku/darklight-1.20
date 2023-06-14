@@ -1,7 +1,7 @@
 {
   "item.darklight.tome" : "Tome",
   "item.darklight.lost_page" : "Lost Page",
-  "item.darklight.lost_page_text" : "Written Lost Page",
+  "item.darklight.written_lost_page" : "Written Lost Page",
 
   "block.darklight.thun_block" : "Thun Block",
 
