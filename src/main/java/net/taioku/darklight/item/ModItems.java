@@ -19,20 +19,18 @@ public class ModItems {
     public static final Item LOST_PAGE_TEXT = registerItem("lost_page_text",
             new Item(new FabricItemSettings()));
 
-
-
     public static void addItemsToItemGroup() {
-        addToItemGroup(ItemGroups.FUNCTIONAL, TOME);
-        addToItemGroup(ItemGroups.FUNCTIONAL, LOST_PAGE);
-        addToItemGroup(ItemGroups.FUNCTIONAL, LOST_PAGE_TEXT);
-    }
-
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(Darklight.MOD_ID, name), item);
+        addToItemGroup(ModItemGroup.TOME, TOME);
+        addToItemGroup(ModItemGroup.TOME, LOST_PAGE);
+        addToItemGroup(ModItemGroup.TOME, LOST_PAGE_TEXT);
     }
 
     private static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
+    }
+
+    private static Item registerItem(String name, Item item) {
+        return Registry.register(Registries.ITEM, new Identifier(Darklight.MOD_ID, name), item);
     }
 
     public static void registerModItems() {

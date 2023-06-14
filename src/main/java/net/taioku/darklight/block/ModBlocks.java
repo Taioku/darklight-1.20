@@ -13,11 +13,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
+import net.taioku.darklight.item.ModItemGroup;
 
 public class ModBlocks {
 
     public static final Block THUN_BLOCK = registerBlock("thun_block",
-            new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ItemGroups.FUNCTIONAL);
+            new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.TOME);
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
