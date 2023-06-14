@@ -24,8 +24,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("#P#")
                 .input('#', Items.AIR)
                 .input('P', Items.PAPER)
-                .criterion(FabricRecipeProvider.hasItem(Items.PAPER),
-                        FabricRecipeProvider.conditionsFromItem(Items.PAPER))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.TOME)));
     }
 }
