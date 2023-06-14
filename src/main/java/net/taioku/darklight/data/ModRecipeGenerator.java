@@ -24,7 +24,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 3f, 300, "thun");
         offerSmelting(exporter, List.of(ModBlocks.THUN_ORE), RecipeCategory.MISC, ModItems.RAW_THUN,
                 3f, 300, "thun");
-        offerSmelting(exporter, List.of(ModItems.RAW_THUN), RecipeCategory.MISC, ModItems.THUN,
+        offerSmelting(exporter, List.of(ModItems.RAW_THUN), RecipeCategory.MISC, ModItems.THUN_INGOT,
                 3f, 300, "thun");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOME)

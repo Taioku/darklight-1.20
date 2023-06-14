@@ -22,8 +22,13 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.THUN_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THUN_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THUN_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THUN_BOOTS, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.RAW_THUN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.THUN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THUN_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.TOME, Models.GENERATED);
         itemModelGenerator.register(ModItems.LOST_PAGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WRITTEN_LOST_PAGE, Models.GENERATED);

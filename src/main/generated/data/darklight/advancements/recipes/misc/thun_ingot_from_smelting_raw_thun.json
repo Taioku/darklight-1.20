@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:thun_from_smelting_raw_thun"
+        "recipe": "minecraft:thun_ingot_from_smelting_raw_thun"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:thun_from_smelting_raw_thun"
+      "minecraft:thun_ingot_from_smelting_raw_thun"
     ]
   },
   "sends_telemetry_event": false
