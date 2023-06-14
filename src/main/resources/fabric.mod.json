@@ -15,14 +15,14 @@
 	"icon": "assets/darklight/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"net.taioku.darklight.DarklightDataGenerator"
+		],
 		"main": [
 			"net.taioku.darklight.Darklight"
 		],
 		"client": [
 			"net.taioku.darklight.DarklightClient"
-		],
-		"fabric-datagen": [
-			"net.taioku.darklight.DarklightDataGenerator"
 		]
 	},
 	"mixins": [

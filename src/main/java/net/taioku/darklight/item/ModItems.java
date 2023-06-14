@@ -19,9 +19,9 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static void addItemsToItemGroup() {
-        addToItemGroup(ModItemGroup.TOME, TOME);
-        addToItemGroup(ModItemGroup.TOME, LOST_PAGE);
-        addToItemGroup(ModItemGroup.TOME, WRITTEN_LOST_PAGE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, TOME);
+        addToItemGroup(ModItemGroup.DARKLIGHT, LOST_PAGE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, WRITTEN_LOST_PAGE);
     }
 
     private static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {

@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -18,7 +17,7 @@ import net.taioku.darklight.item.ModItemGroup;
 public class ModBlocks {
 
     public static final Block THUN_BLOCK = registerBlock("thun_block",
-            new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.TOME);
+            new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
@@ -33,6 +32,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        Darklight.LOGGER.info("Registering ModBlocks For " + Darklight.MOD_ID);
+        Darklight.LOGGER.info("Registering ModBlocks for " + Darklight.MOD_ID);
     }
 }
