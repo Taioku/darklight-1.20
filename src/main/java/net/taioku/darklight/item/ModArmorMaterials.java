@@ -43,42 +43,34 @@ public enum ModArmorMaterials implements ArmorMaterial {
         this.repairIngredientSupplier = new Lazy<Ingredient>(repairIngredientSupplier);
     }
 
-    @Override
     public int getDurability(ArmorItem.Type type) {
         return BASE_DURABILITY.get((Object)type) * this.durabilityMultiplier;
     }
 
-    @Override
     public int getProtection(ArmorItem.Type type) {
         return this.protectionAmounts.get((Object)type);
     }
 
-    @Override
     public int getEnchantability() {
         return this.enchantability;
     }
 
-    @Override
     public SoundEvent getEquipSound() {
         return this.equipSound;
     }
 
-    @Override
     public Ingredient getRepairIngredient() {
         return this.repairIngredientSupplier.get();
     }
 
-    @Override
     public String getName() {
         return this.name;
     }
 
-    @Override
     public float getToughness() {
         return this.toughness;
     }
 
-    @Override
     public float getKnockbackResistance() {
         return this.knockbackResistance;
     }
