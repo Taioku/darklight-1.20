@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"idle": {
+		"animation.model.loop": {
 			"loop": true,
 			"animation_length": 5,
 			"override_previous_animation": true,
