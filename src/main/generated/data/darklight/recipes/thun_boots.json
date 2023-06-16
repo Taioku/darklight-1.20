@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "item": "darklight:thun_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    "T T",
+    "T T"
+  ],
+  "result": {
+    "item": "darklight:thun_boots"
+  },
+  "show_notification": true
+}

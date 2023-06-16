@@ -1,19 +1,19 @@
 {
+  "block.darklight.thun_ore" : "Thun Ore",
+  "block.darklight.deepslate_thun_ore" : "Deepslate Thun Ore",
   "item.darklight.raw_thun": "Raw Thun",
-  "item.darklight.thun_ingot": "Thun",
-
+  "item.darklight.thun_ingot": "Thun Ingot",
+  "block.darklight.thun_block" : "Thun Block",
   "item.darklight.thun_helmet" : "Thun Helmet",
   "item.darklight.thun_chestplate" : "Thun Chestplate",
   "item.darklight.thun_leggings" : "Thun Leggings",
   "item.darklight.thun_boots" : "Thun Boots",
 
+
+
   "item.darklight.tome" : "Tome",
   "item.darklight.lost_page" : "Lost Page",
   "item.darklight.written_lost_page" : "Written Lost Page",
-
-  "block.darklight.thun_ore" : "Thun Ore",
-  "block.darklight.deepslate_thun_ore" : "Deepslate Thun Ore",
-  "block.darklight.thun_block" : "Thun Block",
 
   "itemGroup.darklight.tome": "Darklight"
 }

@@ -2,18 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": [],
-    "P": {
-      "item": "minecraft:paper"
+    "T": {
+      "item": "darklight:thun_ingot"
     }
   },
   "pattern": [
-    "#P#",
-    "P#P",
-    "#P#"
+    "TTT",
+    "T T",
+    "   "
   ],
   "result": {
-    "item": "darklight:tome"
+    "item": "darklight:thun_helmet"
   },
   "show_notification": true
 }
