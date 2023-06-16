@@ -18,6 +18,6 @@ public class RawThun extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("darklight.item.custom.raw_thun.tooltip").formatted(Formatting.RED));
+        tooltip.add(Text.translatable("darklight.item.custom.raw_thun.tooltip"));
     }
 }
