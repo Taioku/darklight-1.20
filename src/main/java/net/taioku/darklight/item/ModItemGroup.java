@@ -20,7 +20,7 @@ public class ModItemGroup {
     public static void registerItemGroups() {
         Registry.register(Registries.ITEM_GROUP, DARKLIGHT, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(ModBlocks.THUN_BLOCK))
-                .displayName(Text.translatable("itemGroup.darklight.tome"))
+                .displayName(Text.translatable("itemGroup.darklight"))
                 .build());
     }
 }

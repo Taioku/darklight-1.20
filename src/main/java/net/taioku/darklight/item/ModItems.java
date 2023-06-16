@@ -10,20 +10,16 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
+import net.taioku.darklight.item.custom.RawThun;
 import net.taioku.darklight.item.custom.ThunArmorItem;
+import net.taioku.darklight.item.custom.ThunIngot;
 
 public class ModItems {
 
     public static final Item RAW_THUN = registerItem("raw_thun",
-            new Item(new FabricItemSettings()));
+            new RawThun(new FabricItemSettings()));
     public static final Item THUN_INGOT = registerItem("thun_ingot",
-            new Item(new FabricItemSettings()));
-    public static final Item TOME = registerItem("tome",
-            new Item(new FabricItemSettings()));
-    public static final Item LOST_PAGE = registerItem("lost_page",
-            new Item(new FabricItemSettings()));
-    public static final Item WRITTEN_LOST_PAGE = registerItem("written_lost_page",
-            new Item(new FabricItemSettings()));
+            new ThunIngot(new FabricItemSettings()));
 
     public static final Item THUN_HELMET = registerItem("thun_helmet",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -34,15 +30,22 @@ public class ModItems {
     public static final Item THUN_BOOTS = registerItem("thun_boots",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
+    public static final Item TOME = registerItem("tome",
+            new Item(new FabricItemSettings()));
+    public static final Item LOST_PAGE = registerItem("lost_page",
+            new Item(new FabricItemSettings()));
+    public static final Item WRITTEN_LOST_PAGE = registerItem("written_lost_page",
+            new Item(new FabricItemSettings()));
+
     public static void addItemsToItemGroup() {
+        addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
+        addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);
+
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_HELMET);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_CHESTPLATE);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_LEGGINGS);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_BOOTS);
 
-        addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
-        addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
-        addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);
         addToItemGroup(ModItemGroup.DARKLIGHT, TOME);
         addToItemGroup(ModItemGroup.DARKLIGHT, LOST_PAGE);
         addToItemGroup(ModItemGroup.DARKLIGHT, WRITTEN_LOST_PAGE);
