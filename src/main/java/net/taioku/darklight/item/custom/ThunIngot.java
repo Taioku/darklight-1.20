@@ -1,5 +1,6 @@
 package net.taioku.darklight.item.custom;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,5 +20,11 @@ public class ThunIngot extends Item {
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.tooltip"));
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.shift_tooltip"));
+        }
+        else {
+            tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.!shift_tooltip").formatted(Formatting.DARK_GRAY));
+        }
     }
 }

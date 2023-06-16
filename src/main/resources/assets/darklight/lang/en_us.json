@@ -15,8 +15,13 @@
   "item.darklight.lost_page" : "Lost Page",
   "item.darklight.written_lost_page" : "Written Lost Page",
 
-  "darklight.item.custom.raw_thun.tooltip" : "feels heavy",
-  "darklight.item.custom.thun_ingot.tooltip" : "feels really heavy",
+
+  "darklight.item.custom.raw_thun.tooltip" : "Feels heavy...",
+  "darklight.item.custom.raw_thun.!shift_tooltip" : "Press Shift for more information.",
+  "darklight.item.custom.raw_thun.shift_tooltip" : "test!",
+  "darklight.item.custom.thun_ingot.tooltip" : "Feels really heavy...",
+  "darklight.item.custom.thun_ingot.!shift_tooltip" : "Press Shift for more information.",
+  "darklight.item.custom.thun_ingot.shift_tooltip" : "test!",
 
   "itemGroup.darklight": "Darklight"
 }
