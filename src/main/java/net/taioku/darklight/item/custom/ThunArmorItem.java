@@ -63,5 +63,4 @@ public class ThunArmorItem extends ArmorItem implements GeoItem {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
     }
-
 }
