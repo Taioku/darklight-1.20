@@ -38,6 +38,7 @@ public class Mortar extends BlockItem implements GeoItem {
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
             private final MortarItemRenderer renderer = new MortarItemRenderer();
+
             @Override
             public BuiltinModelItemRenderer getCustomRenderer() {
                 return this.renderer;
