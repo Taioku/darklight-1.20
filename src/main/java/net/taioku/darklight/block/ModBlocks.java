@@ -25,7 +25,7 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
 
     public static final Block MORTAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "mortar"),
-            new MortarBlock(AbstractBlock.Settings.create().strength(2.0f).nonOpaque()));
+            new MortarBlock(AbstractBlock.Settings.create()));
 
 
 
