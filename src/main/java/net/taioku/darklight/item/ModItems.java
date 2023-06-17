@@ -10,9 +10,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.item.custom.RawThun;
-import net.taioku.darklight.item.custom.ThunArmorItem;
-import net.taioku.darklight.item.custom.ThunIngot;
+import net.taioku.darklight.block.ModBlocks;
+import net.taioku.darklight.item.custom.*;
 
 public class ModItems {
 
@@ -20,6 +19,9 @@ public class ModItems {
             new RawThun(new FabricItemSettings()));
     public static final Item THUN_INGOT = registerItem("thun_ingot",
             new ThunIngot(new FabricItemSettings()));
+
+    public static final Item MORTAR = registerItem("mortar",
+            new Mortar(ModBlocks.MORTAR, new FabricItemSettings()));
 
     public static final Item THUN_HELMET = registerItem("thun_helmet",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -29,6 +31,8 @@ public class ModItems {
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item THUN_BOOTS = registerItem("thun_boots",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+
 
     public static final Item TOME = registerItem("tome",
             new Item(new FabricItemSettings()));
@@ -40,6 +44,7 @@ public class ModItems {
     public static void addItemsToItemGroup() {
         addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);
+        addToItemGroup(ModItemGroup.DARKLIGHT, MORTAR);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_HELMET);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_CHESTPLATE);

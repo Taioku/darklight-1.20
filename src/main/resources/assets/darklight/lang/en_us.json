@@ -1,15 +1,15 @@
 {
   "block.darklight.thun_ore" : "Thun Ore",
   "block.darklight.deepslate_thun_ore" : "Deepslate Thun Ore",
+  "block.darklight.thun_block" : "Thun Block",
+  "block.darklight.mortar" : "Mortar",
+
   "item.darklight.raw_thun": "Raw Thun",
   "item.darklight.thun_ingot": "Thun Ingot",
-  "block.darklight.thun_block" : "Thun Block",
   "item.darklight.thun_helmet" : "Thun Helmet",
   "item.darklight.thun_chestplate" : "Thun Chestplate",
   "item.darklight.thun_leggings" : "Thun Leggings",
   "item.darklight.thun_boots" : "Thun Boots",
-
-
 
   "item.darklight.tome" : "Tome",
   "item.darklight.lost_page" : "Lost Page",
@@ -17,11 +17,11 @@
 
 
   "darklight.item.custom.raw_thun.tooltip" : "Feels heavy...",
-  "darklight.item.custom.raw_thun.!shift_tooltip" : "Press Shift for more information.",
-  "darklight.item.custom.raw_thun.shift_tooltip" : "test!",
+  "darklight.item.custom.raw_thun.!alt_tooltip" : "Press Alt for more information.",
+  "darklight.item.custom.raw_thun.alt_tooltip" : "test!",
   "darklight.item.custom.thun_ingot.tooltip" : "Feels really heavy...",
-  "darklight.item.custom.thun_ingot.!shift_tooltip" : "Press Shift for more information.",
-  "darklight.item.custom.thun_ingot.shift_tooltip" : "test!",
+  "darklight.item.custom.thun_ingot.!alt_tooltip" : "Press Alt for more information.",
+  "darklight.item.custom.thun_ingot.alt_tooltip" : "test!",
 
   "itemGroup.darklight": "Darklight"
 }

@@ -20,11 +20,11 @@ public class ThunIngot extends Item {
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.tooltip"));
-        if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.shift_tooltip"));
+        if (Screen.hasAltDown()) {
+            tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.alt_tooltip"));
         }
         else {
-            tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.!shift_tooltip").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("darklight.item.custom.thun_ingot.!alt_tooltip").formatted(Formatting.DARK_GRAY));
         }
     }
 }

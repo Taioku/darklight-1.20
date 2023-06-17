@@ -12,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
+import net.taioku.darklight.block.custom.MortarBlock;
 import net.taioku.darklight.item.ModItemGroup;
 
 public class ModBlocks {
@@ -22,6 +23,9 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
     public static final Block THUN_BLOCK = registerBlock("thun_block",
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
+
+    public static final Block MORTAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "mortar"),
+            new MortarBlock(AbstractBlock.Settings.create().strength(2.0f).nonOpaque()));
 
 
 

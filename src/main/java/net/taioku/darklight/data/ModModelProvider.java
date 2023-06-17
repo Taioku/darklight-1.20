@@ -29,6 +29,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.RAW_THUN, Models.GENERATED);
         itemModelGenerator.register(ModItems.THUN_INGOT, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.TOME, Models.GENERATED);
         itemModelGenerator.register(ModItems.LOST_PAGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WRITTEN_LOST_PAGE, Models.GENERATED);

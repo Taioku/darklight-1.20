@@ -20,11 +20,11 @@ public class RawThun extends Item {
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.translatable("darklight.item.custom.raw_thun.tooltip"));
-        if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("darklight.item.custom.raw_thun.shift_tooltip"));
+        if (Screen.hasAltDown()) {
+            tooltip.add(Text.translatable("darklight.item.custom.raw_thun.alt_tooltip"));
         }
         else {
-            tooltip.add(Text.translatable("darklight.item.custom.raw_thun.!shift_tooltip").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("darklight.item.custom.raw_thun.!alt_tooltip").formatted(Formatting.DARK_GRAY));
         }
     }
 }
