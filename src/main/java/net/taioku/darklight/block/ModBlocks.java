@@ -32,7 +32,6 @@ public class ModBlocks {
 
 
 
-
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, name), block);
