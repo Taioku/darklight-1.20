@@ -18,14 +18,13 @@ import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class Mortar extends BlockItem implements GeoItem {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
 
     public Mortar(Block block, Settings settings) {
@@ -60,11 +59,6 @@ public class Mortar extends BlockItem implements GeoItem {
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
-    }
-
-    @Override
-    public double getTick(Object itemStack) {
-        return RenderUtils.getCurrentTick();
     }
 
     @Override

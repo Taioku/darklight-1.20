@@ -19,20 +19,20 @@
 
   "block.darklight.mortar" : "Mortar",
   "darklight.item.custom.mortar.tooltip" : "",
-  "darklight.item.custom.mortar.!alt_tooltip" : "Press Alt for more information...",
+  "darklight.item.custom.mortar.!alt_tooltip" : "Press Alt for more information.",
   "darklight.item.custom.mortar.alt_tooltip" : "test!",
 
   "block.darklight.research_table" : "Research Table",
-  "darklight.item.custom.research_table.tooltip" : "Exudes a dark sensation",
-  "darklight.item.custom.research_table.!alt_tooltip" : "Press Alt for more information...",
+  "darklight.item.custom.research_table.tooltip" : "Exudes an obscure sensation",
+  "darklight.item.custom.research_table.!alt_tooltip" : "Press Alt for more information.",
   "darklight.item.custom.research_table.alt_tooltip" : "test!",
 
 
   "darklight.item.custom.raw_thun.tooltip" : "Feels heavy...",
-  "darklight.item.custom.raw_thun.!alt_tooltip" : "Press Alt for more information...",
+  "darklight.item.custom.raw_thun.!alt_tooltip" : "Press Alt for more information.",
   "darklight.item.custom.raw_thun.alt_tooltip" : "test!",
 
   "darklight.item.custom.thun_ingot.tooltip" : "Feels really heavy...",
-  "darklight.item.custom.thun_ingot.!alt_tooltip" : "Press Alt for more information...",
+  "darklight.item.custom.thun_ingot.!alt_tooltip" : "Press Alt for more information.",
   "darklight.item.custom.thun_ingot.alt_tooltip" : "test!"
 }

@@ -1,6 +1,9 @@
 package net.taioku.darklight;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.enums.TablePart;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.entity.client.MortarBlockRenderer;

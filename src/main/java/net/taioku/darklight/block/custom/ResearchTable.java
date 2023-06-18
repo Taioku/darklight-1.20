@@ -2,23 +2,35 @@ package net.taioku.darklight.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.enums.TablePart;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldEvents;
+import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.entity.ResearchTableEntity;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ResearchTable extends BlockWithEntity implements Waterloggable {
+    public static final Logger LOGGER = LoggerFactory.getLogger(Darklight.MOD_ID);
+    public static final EnumProperty<TablePart> PART = EnumProperty.of("part", TablePart.class);
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public static final DirectionProperty HORIZONTAL_FACING = Properties.HORIZONTAL_FACING;
 
@@ -28,36 +40,13 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
                 .nonOpaque());
         setDefaultState(getDefaultState()
                 .with(HORIZONTAL_FACING, Direction.NORTH)
+                .with(PART, TablePart.RIGHT)
                 .with(WATERLOGGED, false));
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(HORIZONTAL_FACING, WATERLOGGED);
-    }
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        Direction direction = state.get(HORIZONTAL_FACING);
-        switch (direction) {
-            case NORTH:
-                return Block.createCuboidShape(-16.0f, 0.0f, 0.0f, 16.0f, 16.0f, 16.0f);
-            case SOUTH:
-                return Block.createCuboidShape(0.0f, 0.0f, 0.0f, 32.0f, 16.0f, 16.0f);
-            case EAST:
-                return Block.createCuboidShape(0.0f, 0.0f, -16.0f, 16.0f, 16.0f, 16.0f);
-            case WEST:
-                return Block.createCuboidShape(0.0f, 0.0f, 0.0f, 16.0f, 16.0f, 32.0f);
-            default:
-                return VoxelShapes.fullCube();
-        }
-    }
-
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState()
-                .with(HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite())
-                .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
+        builder.add(PART, HORIZONTAL_FACING, WATERLOGGED);
     }
 
     @Override
@@ -70,8 +59,62 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-
+        if (direction == ResearchTable.getDirectionTowardsOtherPart(state.get(PART), state.get(HORIZONTAL_FACING))) {
+            if (neighborState.isOf(this) && neighborState.get(PART) != state.get(PART)) {
+                return state;
+            }
+            return Blocks.AIR.getDefaultState();
+        }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    private static Direction getDirectionTowardsOtherPart(TablePart part, Direction direction) {
+        return part == TablePart.RIGHT ? direction : direction.rotateYClockwise();
+    }
+
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        Direction direction = ctx.getHorizontalPlayerFacing();
+        BlockPos blockPos = ctx.getBlockPos();
+        BlockPos blockPos2 = blockPos.offset(direction.rotateYClockwise());
+        World world = ctx.getWorld();
+        if (world.getBlockState(blockPos2).canReplace(ctx) && world.getWorldBorder().contains(blockPos2)) {
+            return getDefaultState()
+                    .with(HORIZONTAL_FACING, direction.rotateYClockwise())
+                    .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
+        }
+        return null;
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.fullCube();
+    }
+
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        super.onPlaced(world, pos, state, placer, itemStack);
+        if (!world.isClient) {
+            BlockPos blockPos = pos.offset(state.get(HORIZONTAL_FACING));
+
+            LOGGER.info("world: " + world + ", pos: " + pos + ", state: " + state + ", placer: " + placer + ", itemStack: " + itemStack + ", blockPos: " + blockPos);
+
+            world.setBlockState(blockPos, state.with(PART, TablePart.LEFT), Block.NOTIFY_ALL);
+            world.updateNeighbors(pos, Blocks.AIR);
+            state.updateNeighbors(world, pos, Block.NOTIFY_ALL);
+        }
+    }
+
+    @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        BlockPos blockPos;
+        BlockState blockState;
+        TablePart tablePart;
+        if (!world.isClient && player.isCreative() && (tablePart = state.get(PART)) == TablePart.RIGHT && (blockState = world.getBlockState(blockPos = pos.offset(ResearchTable.getDirectionTowardsOtherPart(tablePart, state.get(HORIZONTAL_FACING))))).isOf(this) && blockState.get(PART) == TablePart.LEFT) {
+            world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL | Block.SKIP_DROPS);
+            world.syncWorldEvent(player, WorldEvents.BLOCK_BROKEN, blockPos, Block.getRawIdFromState(blockState));
+        }
+        super.onBreak(world, pos, state, player);
     }
 
     @Nullable
