@@ -97,7 +97,7 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
         if (!world.isClient) {
             BlockPos blockPos = pos.offset(state.get(HORIZONTAL_FACING));
 
-            LOGGER.info("world: " + world + ", pos: " + pos + ", state: " + state + ", placer: " + placer + ", itemStack: " + itemStack + ", blockPos: " + blockPos);
+            LOGGER.info(", pos: " + pos + ", state: " + state + ", blockPos: " + blockPos);
 
             world.setBlockState(blockPos, state.with(PART, TablePart.LEFT), Block.NOTIFY_ALL);
             world.updateNeighbors(pos, Blocks.AIR);
