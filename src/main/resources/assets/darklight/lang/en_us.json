@@ -1,4 +1,6 @@
 {
+  "itemGroup.darklight": "Darklight",
+
   "block.darklight.thun_ore" : "Thun Ore",
   "block.darklight.deepslate_thun_ore" : "Deepslate Thun Ore",
   "block.darklight.thun_block" : "Thun Block",
@@ -14,23 +16,23 @@
   "item.darklight.lost_page" : "Lost Page",
   "item.darklight.written_lost_page" : "Written Lost Page",
 
+
   "block.darklight.mortar" : "Mortar",
   "darklight.item.custom.mortar.tooltip" : "",
-  "darklight.item.custom.mortar.!alt_tooltip" : "Press Alt for more information.",
+  "darklight.item.custom.mortar.!alt_tooltip" : "Press Alt for more information...",
   "darklight.item.custom.mortar.alt_tooltip" : "test!",
 
-  "darklight.item.custom.research_table" : "Research Table",
+  "block.darklight.research_table" : "Research Table",
   "darklight.item.custom.research_table.tooltip" : "Exudes a dark sensation",
-  "darklight.item.custom.research_table.!alt_tooltip" : "Press Alt for more information.",
+  "darklight.item.custom.research_table.!alt_tooltip" : "Press Alt for more information...",
   "darklight.item.custom.research_table.alt_tooltip" : "test!",
 
+
   "darklight.item.custom.raw_thun.tooltip" : "Feels heavy...",
-  "darklight.item.custom.raw_thun.!alt_tooltip" : "Press Alt for more information.",
+  "darklight.item.custom.raw_thun.!alt_tooltip" : "Press Alt for more information...",
   "darklight.item.custom.raw_thun.alt_tooltip" : "test!",
 
   "darklight.item.custom.thun_ingot.tooltip" : "Feels really heavy...",
-  "darklight.item.custom.thun_ingot.!alt_tooltip" : "Press Alt for more information.",
-  "darklight.item.custom.thun_ingot.alt_tooltip" : "test!",
-
-  "itemGroup.darklight": "Darklight"
+  "darklight.item.custom.thun_ingot.!alt_tooltip" : "Press Alt for more information...",
+  "darklight.item.custom.thun_ingot.alt_tooltip" : "test!"
 }
