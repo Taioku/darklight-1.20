@@ -13,6 +13,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.custom.MortarBlock;
+import net.taioku.darklight.block.custom.ResearchTable;
 import net.taioku.darklight.item.ModItemGroup;
 
 public class ModBlocks {
@@ -26,6 +27,8 @@ public class ModBlocks {
 
     public static final Block MORTAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "mortar"),
             new MortarBlock(AbstractBlock.Settings.create()));
+    public static final Block RESEARCH_TABLE = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "research_table"),
+            new ResearchTable(AbstractBlock.Settings.create()));
 
 
 

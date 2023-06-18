@@ -2,22 +2,22 @@ package net.taioku.darklight.block.entity.client;
 
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.AnimatedBlockEntity;
+import net.taioku.darklight.block.entity.MortarEntity;
 import software.bernie.geckolib.model.GeoModel;
 
-public class MortarBlockModel extends GeoModel<AnimatedBlockEntity> {
+public class MortarBlockModel extends GeoModel<MortarEntity> {
     @Override
-    public Identifier getModelResource(AnimatedBlockEntity animatable) {
+    public Identifier getModelResource(MortarEntity animatable) {
         return new Identifier(Darklight.MOD_ID, "geo/mortar.geo.json");
     }
 
     @Override
-    public Identifier getTextureResource(AnimatedBlockEntity animatable) {
+    public Identifier getTextureResource(MortarEntity animatable) {
         return new Identifier(Darklight.MOD_ID, "textures/block/mortar.png");
     }
 
     @Override
-    public Identifier getAnimationResource(AnimatedBlockEntity animatable) {
+    public Identifier getAnimationResource(MortarEntity animatable) {
         return new Identifier(Darklight.MOD_ID, "animations/mortar.animation.json");
     }
 }

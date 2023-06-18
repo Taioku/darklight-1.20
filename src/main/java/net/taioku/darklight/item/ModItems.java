@@ -22,6 +22,8 @@ public class ModItems {
 
     public static final Item MORTAR = registerItem("mortar",
             new Mortar(ModBlocks.MORTAR, new FabricItemSettings()));
+    public static final Item RESEARCH_TABLE = registerItem("research_table",
+            new ResearchTable(ModBlocks.RESEARCH_TABLE, new FabricItemSettings()));
 
     public static final Item THUN_HELMET = registerItem("thun_helmet",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -45,6 +47,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);
         addToItemGroup(ModItemGroup.DARKLIGHT, MORTAR);
+        addToItemGroup(ModItemGroup.DARKLIGHT, RESEARCH_TABLE);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_HELMET);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_CHESTPLATE);

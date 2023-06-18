@@ -14,14 +14,13 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
-import net.taioku.darklight.block.entity.MortarEntity;
+import net.taioku.darklight.block.entity.ResearchTableEntity;
 import org.jetbrains.annotations.Nullable;
 
-
-public class MortarBlock extends BlockWithEntity implements Waterloggable{
+public class ResearchTable extends BlockWithEntity implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public MortarBlock(Settings settings) {
+    public ResearchTable(Settings settings) {
         super(settings
                 .strength(2.0f)
                 .nonOpaque());
@@ -40,13 +39,13 @@ public class MortarBlock extends BlockWithEntity implements Waterloggable{
         Direction direction = state.get(Properties.HORIZONTAL_FACING);
         switch (direction) {
             case NORTH:
-                return Block.createCuboidShape(1.5f, 0.0f, 0.0f, 15.0f, 5.0f, 16.0f);
+                return Block.createCuboidShape(-16.0f, 0.0f, 0.0f, 16.0f, 16.0f, 16.0f);
             case SOUTH:
-                return Block.createCuboidShape(1.0f, 0.0f, 0.0f, 14.0f, 5.0f, 16.0f);
+                return Block.createCuboidShape(0.0f, 0.0f, 0.0f, 32.0f, 16.0f, 16.0f);
             case EAST:
-                return Block.createCuboidShape(0.0f, 0.0f, 1.0f, 16.0f, 5.0f, 15.0f);
+                return Block.createCuboidShape(0.0f, 0.0f, -16.0f, 16.0f, 16.0f, 16.0f);
             case WEST:
-                return Block.createCuboidShape(1.0f, 0.0f, 1.0f, 16.0f, 5.0f, 15.0f);
+                return Block.createCuboidShape(0.0f, 0.0f, 0.0f, 16.0f, 16.0f, 32.0f);
             default:
                 return VoxelShapes.fullCube();
         }
@@ -76,7 +75,7 @@ public class MortarBlock extends BlockWithEntity implements Waterloggable{
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new MortarEntity(pos, state);
+        return new ResearchTableEntity(pos, state);
     }
 
     @Override
