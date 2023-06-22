@@ -36,7 +36,7 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
                 .strength(2.0f)
                 .nonOpaque());
         setDefaultState(getDefaultState()
-                .with(HORIZONTAL_FACING, Direction.SOUTH)
+                .with(HORIZONTAL_FACING, Direction.NORTH)
                 .with(PART, TablePart.LEFT)
                 .with(WATERLOGGED, false));
     }
@@ -44,11 +44,6 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(PART, HORIZONTAL_FACING, WATERLOGGED);
-    }
-
-    @Override
-    public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     @Override
@@ -66,7 +61,7 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
     }
 
     private static Direction getDirectionTowardsOtherPart(TablePart part, Direction direction) {
-        return part == TablePart.LEFT ? direction : direction.rotateYClockwise();
+        return part == TablePart.LEFT ? direction : direction.getOpposite();
     }
 
     @Override
@@ -81,6 +76,11 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
                     .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
         }
         return null;
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     @Override
