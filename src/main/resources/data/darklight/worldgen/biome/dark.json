@@ -1,12 +1,18 @@
 {
   "temperature": 0.7,
   "downfall": 1,
-  "has_precipitation": true,
+  "has_precipitation": false,
   "effects": {
-    "sky_color": 16743034,
-    "fog_color": 11179927,
+    "sky_color": 2560273,
+    "fog_color": 4405047,
     "water_color": 1116168,
-    "water_fog_color": 2102035
+    "water_fog_color": 2102035,
+    "particle": {
+      "options": {
+        "type": "white_ash"
+      },
+      "probability": 0.2
+    }
   },
   "spawners": {},
   "spawn_costs": {},
