@@ -1,5 +1,5 @@
 {
-  "type": "darklight:darklight",
+  "type": "darklight:darklight_type",
   "generator": {
     "type": "minecraft:noise",
     "settings": "minecraft:overworld",
@@ -7,7 +7,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "minecraft:dark",
+          "biome": "darklight:dark",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -19,7 +19,7 @@
           }
         },
         {
-          "biome": "minecraft:shade",
+          "biome": "darklight:shade",
           "parameters": {
             "temperature": [
               0,
@@ -34,7 +34,7 @@
           }
         },
         {
-          "biome": "minecraft:ash",
+          "biome": "darklight:ash",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -46,7 +46,7 @@
           }
         },
         {
-          "biome": "minecraft:pebble",
+          "biome": "darklight:pebble",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -58,7 +58,7 @@
           }
         },
         {
-          "biome": "minecraft:blad",
+          "biome": "darklight:blad",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -70,7 +70,7 @@
           }
         },
         {
-          "biome": "minecraft:nix",
+          "biome": "darklight:nix",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -82,7 +82,7 @@
           }
         },
         {
-          "biome": "minecraft:exels",
+          "biome": "darklight:exels",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -94,7 +94,7 @@
           }
         },
         {
-          "biome": "minecraft:corrupt",
+          "biome": "darklight:corrupt",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -106,7 +106,7 @@
           }
         },
         {
-          "biome": "minecraft:light",
+          "biome": "darklight:light",
           "parameters": {
             "temperature": [
               0,
@@ -121,7 +121,7 @@
           }
         },
         {
-          "biome": "minecraft:dark",
+          "biome": "darklight:dark",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -136,7 +136,7 @@
           }
         },
         {
-          "biome": "minecraft:dark",
+          "biome": "darklight:dark",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -151,7 +151,7 @@
           }
         },
         {
-          "biome": "minecraft:dark",
+          "biome": "darklight:dark",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -166,7 +166,7 @@
           }
         },
         {
-          "biome": "minecraft:dark",
+          "biome": "darklight:dark",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
