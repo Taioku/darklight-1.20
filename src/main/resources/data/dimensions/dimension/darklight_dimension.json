@@ -1,5 +1,5 @@
 {
-  "type": "darklight:dark",
+  "type": "darklight:darklight",
   "generator": {
     "type": "minecraft:noise",
     "settings": "minecraft:overworld",
