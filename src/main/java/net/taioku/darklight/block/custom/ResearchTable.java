@@ -1,5 +1,6 @@
 package net.taioku.darklight.block.custom;
 
+import io.netty.util.Attribute;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.TablePart;
@@ -22,14 +23,10 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
-import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.entity.ResearchTableEntity;
 import org.jetbrains.annotations.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ResearchTable extends BlockWithEntity implements Waterloggable {
-    public static final Logger LOGGER = LoggerFactory.getLogger(Darklight.MOD_ID);
     public static final EnumProperty<TablePart> PART = EnumProperty.of("part", TablePart.class);
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public static final DirectionProperty HORIZONTAL_FACING = Properties.HORIZONTAL_FACING;
@@ -39,8 +36,8 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
                 .strength(2.0f)
                 .nonOpaque());
         setDefaultState(getDefaultState()
-                .with(HORIZONTAL_FACING, Direction.NORTH)
-                .with(PART, TablePart.RIGHT)
+                .with(HORIZONTAL_FACING, Direction.SOUTH)
+                .with(PART, TablePart.LEFT)
                 .with(WATERLOGGED, false));
     }
 
@@ -69,7 +66,7 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
     }
 
     private static Direction getDirectionTowardsOtherPart(TablePart part, Direction direction) {
-        return part == TablePart.RIGHT ? direction : direction.rotateYClockwise();
+        return part == TablePart.LEFT ? direction : direction.rotateYClockwise();
     }
 
     @Override
@@ -96,10 +93,7 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
         super.onPlaced(world, pos, state, placer, itemStack);
         if (!world.isClient) {
             BlockPos blockPos = pos.offset(state.get(HORIZONTAL_FACING));
-
-            LOGGER.info(", pos: " + pos + ", state: " + state + ", blockPos: " + blockPos);
-
-            world.setBlockState(blockPos, state.with(PART, TablePart.LEFT), Block.NOTIFY_ALL);
+            world.setBlockState(blockPos, state.with(PART, TablePart.RIGHT), Block.NOTIFY_ALL);
             world.updateNeighbors(pos, Blocks.AIR);
             state.updateNeighbors(world, pos, Block.NOTIFY_ALL);
         }
@@ -110,7 +104,7 @@ public class ResearchTable extends BlockWithEntity implements Waterloggable {
         BlockPos blockPos;
         BlockState blockState;
         TablePart tablePart;
-        if (!world.isClient && player.isCreative() && (tablePart = state.get(PART)) == TablePart.RIGHT && (blockState = world.getBlockState(blockPos = pos.offset(ResearchTable.getDirectionTowardsOtherPart(tablePart, state.get(HORIZONTAL_FACING))))).isOf(this) && blockState.get(PART) == TablePart.LEFT) {
+        if (!world.isClient && player.isCreative() && (tablePart = state.get(PART)) == TablePart.LEFT && (blockState = world.getBlockState(blockPos = pos.offset(ResearchTable.getDirectionTowardsOtherPart(tablePart, state.get(HORIZONTAL_FACING))))).isOf(this) && blockState.get(PART) == TablePart.RIGHT) {
             world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL | Block.SKIP_DROPS);
             world.syncWorldEvent(player, WorldEvents.BLOCK_BROKEN, blockPos, Block.getRawIdFromState(blockState));
         }
