@@ -2,7 +2,11 @@ package net.taioku.darklight;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.taioku.darklight.block.ModBlocks;
+import net.taioku.darklight.block.ModFlammableBlockRegisty;
+import net.taioku.darklight.block.ModStrippableBlockRegistry;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
@@ -31,5 +35,8 @@ public class Darklight implements ModInitializer {
 		GeckoLib.initialize();
 
 		ModDimensions.register();
+
+		ModFlammableBlockRegisty.registerFlammableBlocks();
+		ModStrippableBlockRegistry.registerStrippableBlocks();
 	}
 }

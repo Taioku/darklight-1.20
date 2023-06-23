@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "darklight:block/stripped_shine_log",
+    "side": "darklight:block/stripped_shine_log"
+  }
+}

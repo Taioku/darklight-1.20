@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "darklight:block/shine_log_top",
+    "side": "darklight:block/shine_log"
+  }
+}

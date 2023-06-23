@@ -8,6 +8,7 @@ import net.minecraft.util.math.Direction;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.item.ModItems;
+import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -19,6 +20,14 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.THUN_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_THUN_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.THUN_BLOCK);
+
+        blockStateModelGenerator.registerLog(ModBlocks.SHINE_LOG).log(ModBlocks.SHINE_LOG).wood(ModBlocks.SHINE_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_SHINE_LOG).log(ModBlocks.STRIPPED_SHINE_LOG).wood(ModBlocks.STRIPPED_SHINE_WOOD);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_LEAVES);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.SHINE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override
