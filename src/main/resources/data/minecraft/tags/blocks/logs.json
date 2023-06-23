@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "darklight:shine_log",
+    "darklight:shine_wood",
+    "darklight:stripped_shine_log",
+    "darklight:stripped_shine_wood"
+  ]
+}
