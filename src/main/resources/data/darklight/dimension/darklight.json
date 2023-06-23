@@ -285,17 +285,17 @@
             }
           },
           {
-            "type": "minecraft:sequence",
-            "sequence": [
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "darklight:shade"
-                  ]
-                },
-                "then_run": {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "darklight:light"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:stone_depth",
@@ -307,32 +307,18 @@
                   "then_run": {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "minecraft:red_sandstone"
+                      "Name": "minecraft:white_concrete"
                     }
                   }
-                }
-              }
-            ]
-          },
-          {
-            "type": "minecraft:sequence",
-            "sequence": [
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:biome",
-                  "biome_is": [
-                    "darklight:light"
-                  ]
                 },
-                "then_run": {
+                {
                   "type": "minecraft:condition",
                   "if_true": {
                     "type": "minecraft:stone_depth",
                     "offset": 0,
                     "surface_type": "floor",
                     "add_surface_depth": false,
-                    "secondary_depth_range": 0
+                    "secondary_depth_range": 4
                   },
                   "then_run": {
                     "type": "minecraft:block",
@@ -341,8 +327,8 @@
                     }
                   }
                 }
-              }
-            ]
+              ]
+            }
           }
         ]
       }
