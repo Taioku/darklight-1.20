@@ -6,7 +6,13 @@
     "sky_color": 16743034,
     "fog_color": 11179927,
     "water_color": 1116168,
-    "water_fog_color": 2102035
+    "water_fog_color": 2102035,
+    "particle": {
+      "options": {
+        "type": "end_rod"
+      },
+      "probability": 0.001
+    }
   },
   "spawners": {},
   "spawn_costs": {},
@@ -17,5 +23,9 @@
       "minecraft:canyon"
     ]
   },
-  "features": []
+  "features": [
+    [
+      "darklight:shards"
+    ]
+  ]
 }

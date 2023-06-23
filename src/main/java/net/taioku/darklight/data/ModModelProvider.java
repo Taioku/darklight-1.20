@@ -7,6 +7,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.Direction;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
+import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.item.ModItems;
 import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 
@@ -43,5 +44,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TOME, Models.GENERATED);
         itemModelGenerator.register(ModItems.LOST_PAGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.WRITTEN_LOST_PAGE, Models.GENERATED);
+
+        itemModelGenerator.register(ModFluids.SHINE_WATER_BUCKET, Models.GENERATED);
     }
 }

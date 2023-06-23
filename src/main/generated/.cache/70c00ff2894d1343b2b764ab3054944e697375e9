@@ -1,9 +1,10 @@
-// 1.20	2023-06-23T03:52:07.1163125	Darklight/Model Definitions
+// 1.20	2023-06-23T15:45:44.8787266	Darklight/Model Definitions
 17662aafe0185a3eccc5dc726979d4327f271fe2 assets\darklight\blockstates\deepslate_thun_ore.json
 8dbb7bc84ac512409f9b2abc6bdd667c9bfab2e2 assets\darklight\models\item\thun_ore.json
 bb8f9d8f30a5852db9a596f3163e9a9d42916ca1 assets\darklight\models\block\stripped_shine_log.json
 fdecd7ffe43b671eeff12e349e8df7473afa6764 assets\darklight\blockstates\thun_ore.json
 4cd2a9c6dcfb25471f59fa363a5016f7e472ecfd assets\darklight\blockstates\stripped_shine_log.json
+b6541ab073fd4802bfd17f711b129679ee2b6208 assets\darklight\models\item\shine_water_bucket.json
 24ade7e2f58a91d9f9d1eab7c684d76a279f5b20 assets\darklight\blockstates\shine_wood.json
 f9116bf3a6765768c6ecf0e4466474941cf987ff assets\darklight\models\item\deepslate_thun_ore.json
 908ff83bcaa12ae77aace7b658f7626baccfbd4a assets\darklight\models\item\stripped_shine_log.json

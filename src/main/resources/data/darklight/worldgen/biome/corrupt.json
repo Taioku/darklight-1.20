@@ -10,12 +10,8 @@
   },
   "spawners": {},
   "spawn_costs": {},
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
-  "features": []
+  "carvers": {},
+  "features": [
+    "darklight:shards"
+  ]
 }

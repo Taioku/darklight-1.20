@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.WeightedList;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.util.math.intprovider.WeightedListIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
@@ -27,8 +26,8 @@ public class ModConfiguredFeatures {
 
         register(context, SHINE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.SHINE_LOG),
-                new CherryTrunkPlacer(4, 5, 3, ConstantIntProvider.create(1),
-                        UniformIntProvider.create(2, 4), UniformIntProvider.create(-3, -4), UniformIntProvider.create(-1, 0)),
+                new CherryTrunkPlacer(4, 1, 0, ConstantIntProvider.create(3),
+                        UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)),
                 BlockStateProvider.of(ModBlocks.SHINE_LEAVES),
                 new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5),
                         0.25F, 0.25F, 0.16666667F, 0.33333334F),

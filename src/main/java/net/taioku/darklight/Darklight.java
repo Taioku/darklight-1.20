@@ -2,12 +2,11 @@ package net.taioku.darklight;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.ModFlammableBlockRegisty;
 import net.taioku.darklight.block.ModStrippableBlockRegistry;
 import net.taioku.darklight.block.entity.ModBlockEntities;
+import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
 import net.taioku.darklight.world.dimension.ModDimensions;
@@ -34,5 +33,7 @@ public class Darklight implements ModInitializer {
 
 		ModFlammableBlockRegisty.registerFlammableBlocks();
 		ModStrippableBlockRegistry.registerStrippableBlocks();
+
+		ModFluids.register();
 	}
 }
