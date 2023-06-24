@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.sapling.DarkOakSaplingGenerator;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -13,10 +14,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.custom.MortarBlock;
-import net.taioku.darklight.block.custom.ResearchTable;
-import net.taioku.darklight.block.custom.ShineFernBlock;
-import net.taioku.darklight.block.custom.ShineGrassBlock;
+import net.taioku.darklight.block.custom.*;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.world.tree.ShineSaplingGenerator;
 
@@ -52,9 +50,9 @@ public class ModBlocks {
     public static final Block SHINE_GRASS = registerBlock("shine_grass",
             new ShineFernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_TALL_GRASS = registerBlock("shine_tall_grass",
-            new TallPlantBlock(AbstractBlock.Settings.copy(Blocks.GRASS)), ModItemGroup.DARKLIGHT);
+            new ShineTallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_SAPLING = registerBlock("shine_sapling",
-            new SaplingBlock(new ShineSaplingGenerator(),AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)), ModItemGroup.DARKLIGHT);
+            new ShineSaplingBlock(new ShineSaplingGenerator(), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_GRASS_BLOCK = registerBlock("shine_grass_block",
             new ShineGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)), ModItemGroup.DARKLIGHT);

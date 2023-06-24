@@ -8,6 +8,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
@@ -57,9 +58,9 @@ public class ShineGrassBlock extends SpreadableBlock implements Fertilizable {
                 registryEntry = ((RandomPatchFeatureConfig)list.get(0).config()).feature();
             } else {
                 if (!optional.isPresent()) continue;
-                registryEntry = (RegistryEntry<PlacedFeature>)optional.get();
+                registryEntry = optional.get();
             }
-            ((PlacedFeature)registryEntry.value()).generateUnregistered(world, world.getChunkManager().getChunkGenerator(), random, blockPos2);
+            (registryEntry.value()).generateUnregistered(world, world.getChunkManager().getChunkGenerator(), random, blockPos2);
         }
     }
 
