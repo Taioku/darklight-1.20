@@ -46,7 +46,7 @@ public class ModBlocks {
 
     public static final Block SHINE_DIRT = registerBlock("shine_dirt",
             new Block(AbstractBlock.Settings.copy(Blocks.DIRT)), ModItemGroup.DARKLIGHT);
-    public static final Block SHINE_GRASS = registerBlock("shine_grass",
+    public static final Block SHINE_GRASS_BLOCK = registerBlock("shine_grass_block",
             new GrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_COBBLESTONE = registerBlock("shine_cobblestone",
@@ -71,11 +71,13 @@ public class ModBlocks {
 
     // -------------------------------------------------- SHINE --------------------------------------------------
 
+
+
     // -------------------------------------------------- DARK --------------------------------------------------
 
     public static final Block DARK_DIRT = registerBlock("dark_dirt",
             new Block(AbstractBlock.Settings.copy(Blocks.DIRT).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_GRASS = registerBlock("dark_grass",
+    public static final Block DARK_GRASS_BLOCK = registerBlock("dark_grass_block",
             new GrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
 
     public static final Block DARK_COBBLESTONE = registerBlock("dark_cobblestone",

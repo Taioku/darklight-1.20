@@ -34,7 +34,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.SHINE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_DIRT);
-        blockStateModelGenerator.registerSingleton(ModBlocks.DARK_GRASS, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSingleton(ModBlocks.DARK_GRASS_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_STONE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_COBBLESTONE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_CALCITE);
@@ -46,7 +46,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerAxisRotated(ModBlocks.DARK_DEEPSLATE_TILES, TexturedModel.CUBE_ALL);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_DIRT);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHINE_GRASS, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSingleton(ModBlocks.SHINE_GRASS_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_STONE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_COBBLESTONE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_CALCITE);
