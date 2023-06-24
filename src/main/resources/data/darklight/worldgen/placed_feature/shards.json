@@ -1,5 +1,54 @@
 {
-  "feature": "darklight:shard",
+  "feature": {
+    "type": "minecraft:simple_block",
+    "config": {
+      "to_place": {
+        "type": "minecraft:weighted_state_provider",
+        "entries": [
+          {
+            "weight": 1,
+            "data": {
+              "Name": "minecraft:small_amethyst_bud",
+              "Properties": {
+                "facing": "down",
+                "waterlogged": "false"
+              }
+            }
+          },
+          {
+            "weight": 1,
+            "data": {
+              "Name": "minecraft:medium_amethyst_bud",
+              "Properties": {
+                "facing": "down",
+                "waterlogged": "false"
+              }
+            }
+          },
+          {
+            "weight": 1,
+            "data": {
+              "Name": "minecraft:large_amethyst_bud",
+              "Properties": {
+                "facing": "down",
+                "waterlogged": "false"
+              }
+            }
+          },
+          {
+            "weight": 3,
+            "data": {
+              "Name": "minecraft:amethyst_cluster",
+              "Properties": {
+                "facing": "down",
+                "waterlogged": "false"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
   "placement": [
     {
       "type": "minecraft:count",
@@ -13,7 +62,7 @@
       "height": {
         "type": "minecraft:uniform",
         "min_inclusive": {
-          "absolute": -64
+          "absolute": 0
         },
         "max_inclusive": {
           "absolute": 384
@@ -25,18 +74,21 @@
       "direction_of_search": "up",
       "max_steps": 12,
       "target_condition": {
-        "type": "minecraft:matching_blocks",
-        "blocks": "minecraft:air"
-      },
-      "allowed_search_condition": {
         "type": "minecraft:has_sturdy_face",
         "direction": "down"
+      },
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
       }
     },
     {
       "type": "minecraft:random_offset",
       "xz_spread": 0,
       "y_spread": -1
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }
