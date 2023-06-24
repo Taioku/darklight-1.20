@@ -33,29 +33,29 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.SHINE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_DIRT);
-        blockStateModelGenerator.registerSingleton(ModBlocks.DARK_GRASS_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_STONE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_COBBLESTONE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_CALCITE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_TUFF);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_STONE_BRICKS);
-        blockStateModelGenerator.registerAxisRotated(ModBlocks.DARK_DEEPSLATE, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_COBBLED_DEEPSLATE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_DEEPSLATE_BRICKS);
-        blockStateModelGenerator.registerAxisRotated(ModBlocks.DARK_DEEPSLATE_TILES, TexturedModel.CUBE_ALL);
-
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_DIRT);
         blockStateModelGenerator.registerSingleton(ModBlocks.SHINE_GRASS_BLOCK, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_DIRT);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_STONE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_COBBLESTONE);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_CALCITE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_TUFF);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_STONE_BRICKS);
+
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_STONE_BRICKS, TexturedModel.CUBE_ALL);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_CRACKED_STONE_BRICKS, TexturedModel.CUBE_ALL);
+
         blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_DEEPSLATE, TexturedModel.CUBE_COLUMN);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_COBBLED_DEEPSLATE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_DEEPSLATE_BRICKS);
+
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_DEEPSLATE_BRICKS, TexturedModel.CUBE_ALL);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_CRACKED_DEEPSLATE_BRICKS, TexturedModel.CUBE_ALL);
+
         blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_DEEPSLATE_TILES, TexturedModel.CUBE_ALL);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_CRACKED_DEEPSLATE_TILES, TexturedModel.CUBE_ALL);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_POLISHED_DEEPSLATE);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_CHISELED_DEEPSLATE, TexturedModel.CUBE_ALL);
     }
 
     @Override

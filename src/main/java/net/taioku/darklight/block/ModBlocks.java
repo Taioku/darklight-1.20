@@ -27,6 +27,11 @@ public class ModBlocks {
     public static final Block THUN_BLOCK = registerBlock("thun_block",
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
 
+    public static final Block MORTAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "mortar"),
+            new MortarBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
+    public static final Block RESEARCH_TABLE = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "research_table"),
+            new ResearchTable(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
+
     // -------------------------------------------------- SHINE --------------------------------------------------
 
     public static final Block SHINE_LOG = registerBlock("shine_log",
@@ -44,30 +49,45 @@ public class ModBlocks {
     public static final Block SHINE_SAPLING = registerBlock("shine_sapling",
             new SaplingBlock(new ShineSaplingGenerator(),AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)), ModItemGroup.DARKLIGHT);
 
-    public static final Block SHINE_DIRT = registerBlock("shine_dirt",
-            new Block(AbstractBlock.Settings.copy(Blocks.DIRT)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_GRASS_BLOCK = registerBlock("shine_grass_block",
             new GrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_DIRT = registerBlock("shine_dirt",
+            new Block(AbstractBlock.Settings.copy(Blocks.DIRT)), ModItemGroup.DARKLIGHT);
 
-    public static final Block SHINE_COBBLESTONE = registerBlock("shine_cobblestone",
-            new Block(AbstractBlock.Settings.copy(Blocks.COBBLESTONE)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_CALCITE = registerBlock("shine_calcite",
             new Block(AbstractBlock.Settings.copy(Blocks.CALCITE)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_TUFF = registerBlock("shine_tuff",
             new Block(AbstractBlock.Settings.copy(Blocks.TUFF)), ModItemGroup.DARKLIGHT);
+
     public static final Block SHINE_STONE = registerBlock("shine_stone",
             new Block(AbstractBlock.Settings.copy(Blocks.STONE)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_COBBLESTONE = registerBlock("shine_cobblestone",
+            new Block(AbstractBlock.Settings.copy(Blocks.COBBLESTONE)), ModItemGroup.DARKLIGHT);
+
     public static final Block SHINE_STONE_BRICKS = registerBlock("shine_stone_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS)), ModItemGroup.DARKLIGHT);
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_CRACKED_STONE_BRICKS = registerBlock("shine_cracked_stone_bricks",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.CRACKED_STONE_BRICKS)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_DEEPSLATE = registerBlock("shine_deepslate",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_COBBLED_DEEPSLATE = registerBlock("shine_cobbled_deepslate",
             new Block(AbstractBlock.Settings.copy(Blocks.COBBLED_DEEPSLATE)), ModItemGroup.DARKLIGHT);
+
     public static final Block SHINE_DEEPSLATE_BRICKS = registerBlock("shine_deepslate_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_BRICKS)), ModItemGroup.DARKLIGHT);
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_BRICKS)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_CRACKED_DEEPSLATE_BRICKS = registerBlock("shine_cracked_deepslate_bricks",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.CRACKED_DEEPSLATE_BRICKS)), ModItemGroup.DARKLIGHT);
+
     public static final Block SHINE_DEEPSLATE_TILES = registerBlock("shine_deepslate_tiles",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_TILES)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_CRACKED_DEEPSLATE_TILES = registerBlock("shine_cracked_deepslate_tiles",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.CRACKED_DEEPSLATE_TILES)), ModItemGroup.DARKLIGHT);
+
+    public static final Block SHINE_POLISHED_DEEPSLATE = registerBlock("shine_polished_deepslate",
+            new Block(AbstractBlock.Settings.copy(Blocks.POLISHED_DEEPSLATE)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_CHISELED_DEEPSLATE = registerBlock("shine_chiseled_deepslate",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.CHISELED_DEEPSLATE)), ModItemGroup.DARKLIGHT);
 
     // -------------------------------------------------- SHINE --------------------------------------------------
 
@@ -75,35 +95,7 @@ public class ModBlocks {
 
     // -------------------------------------------------- DARK --------------------------------------------------
 
-    public static final Block DARK_DIRT = registerBlock("dark_dirt",
-            new Block(AbstractBlock.Settings.copy(Blocks.DIRT).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_GRASS_BLOCK = registerBlock("dark_grass_block",
-            new GrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
 
-    public static final Block DARK_COBBLESTONE = registerBlock("dark_cobblestone",
-            new Block(AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_CALCITE = registerBlock("dark_calcite",
-            new Block(AbstractBlock.Settings.copy(Blocks.CALCITE).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_TUFF = registerBlock("dark_tuff",
-            new Block(AbstractBlock.Settings.copy(Blocks.TUFF).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_STONE = registerBlock("dark_stone",
-            new Block(AbstractBlock.Settings.copy(Blocks.STONE).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_STONE_BRICKS = registerBlock("dark_stone_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-
-    public static final Block DARK_DEEPSLATE = registerBlock("dark_deepslate",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_COBBLED_DEEPSLATE = registerBlock("dark_cobbled_deepslate",
-            new Block(AbstractBlock.Settings.copy(Blocks.COBBLED_DEEPSLATE).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_DEEPSLATE_BRICKS = registerBlock("dark_deepslate_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_BRICKS).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-    public static final Block DARK_DEEPSLATE_TILES = registerBlock("dark_deepslate_tiles",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_TILES).strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
-
-    public static final Block MORTAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "mortar"),
-            new MortarBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
-    public static final Block RESEARCH_TABLE = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "research_table"),
-            new ResearchTable(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
 
     // -------------------------------------------------- DARK --------------------------------------------------
 

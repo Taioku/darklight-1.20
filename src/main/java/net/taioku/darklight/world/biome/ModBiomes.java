@@ -9,6 +9,8 @@ import net.taioku.darklight.Darklight;
 public class ModBiomes {
     public static final RegistryKey<Biome> ASH = RegistryKey.of(RegistryKeys.BIOME,
             new Identifier(Darklight.MOD_ID, "ash"));
+    public static final RegistryKey<Biome> BLIND = RegistryKey.of(RegistryKeys.BIOME,
+            new Identifier(Darklight.MOD_ID, "blind"));
     public static final RegistryKey<Biome> BLAD = RegistryKey.of(RegistryKeys.BIOME,
             new Identifier(Darklight.MOD_ID, "blad"));
     public static final RegistryKey<Biome> CORRUPT = RegistryKey.of(RegistryKeys.BIOME,
