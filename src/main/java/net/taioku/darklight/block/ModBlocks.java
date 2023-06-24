@@ -45,14 +45,14 @@ public class ModBlocks {
     public static final Block SHINE_PLANKS = registerBlock("shine_planks",
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_LEAVES = registerBlock("shine_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)), ModItemGroup.DARKLIGHT);
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).luminance(state -> 2)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_GRASS = registerBlock("shine_grass",
-            new ShineFernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)), ModItemGroup.DARKLIGHT);
+            new ShineFernBlock(AbstractBlock.Settings.copy(Blocks.GRASS).luminance(state -> 5)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_TALL_GRASS = registerBlock("shine_tall_grass",
-            new ShineTallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS)), ModItemGroup.DARKLIGHT);
+            new ShineTallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS).luminance(state -> 5)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_SAPLING = registerBlock("shine_sapling",
-            new ShineSaplingBlock(new ShineSaplingGenerator(), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)), ModItemGroup.DARKLIGHT);
+            new ShineSaplingBlock(new ShineSaplingGenerator(), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).luminance(state -> 5)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_GRASS_BLOCK = registerBlock("shine_grass_block",
             new ShineGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)), ModItemGroup.DARKLIGHT);
