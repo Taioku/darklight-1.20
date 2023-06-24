@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "darklight:block/shine_tall_grass_bottom"
+    },
+    "half=upper": {
+      "model": "darklight:block/shine_tall_grass_top"
+    }
+  }
+}

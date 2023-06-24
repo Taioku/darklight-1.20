@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "darklight:block/shine_cracked_stone_bricks"
+  }
+}

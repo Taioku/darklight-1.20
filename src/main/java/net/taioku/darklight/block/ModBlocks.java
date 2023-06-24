@@ -15,6 +15,8 @@ import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.custom.MortarBlock;
 import net.taioku.darklight.block.custom.ResearchTable;
+import net.taioku.darklight.block.custom.ShineFernBlock;
+import net.taioku.darklight.block.custom.ShineGrassBlock;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.world.tree.ShineSaplingGenerator;
 
@@ -46,11 +48,16 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_LEAVES = registerBlock("shine_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)), ModItemGroup.DARKLIGHT);
+
+    public static final Block SHINE_GRASS = registerBlock("shine_grass",
+            new ShineFernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_TALL_GRASS = registerBlock("shine_tall_grass",
+            new TallPlantBlock(AbstractBlock.Settings.copy(Blocks.GRASS)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_SAPLING = registerBlock("shine_sapling",
             new SaplingBlock(new ShineSaplingGenerator(),AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_GRASS_BLOCK = registerBlock("shine_grass_block",
-            new GrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)), ModItemGroup.DARKLIGHT);
+            new ShineGrassBlock(AbstractBlock.Settings.copy(Blocks.GRASS_BLOCK)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_DIRT = registerBlock("shine_dirt",
             new Block(AbstractBlock.Settings.copy(Blocks.DIRT)), ModItemGroup.DARKLIGHT);
 

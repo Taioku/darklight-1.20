@@ -1,6 +1,6 @@
-  {
+{
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "darklight:block/shine_sapling"
+    "cross": "darklight:block/shine_tall_grass_bottom"
   }
 }
