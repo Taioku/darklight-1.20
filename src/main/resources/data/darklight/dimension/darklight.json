@@ -565,7 +565,7 @@
           }
         },
         {
-          "biome": "darklight:nix",
+          "biome": "darklight:corrupt",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
@@ -589,7 +589,7 @@
           }
         },
         {
-          "biome": "darklight:corrupt",
+          "biome": "darklight:nix",
           "parameters": {
             "temperature": 0,
             "humidity": 0,
