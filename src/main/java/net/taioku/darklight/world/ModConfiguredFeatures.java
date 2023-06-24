@@ -26,7 +26,7 @@ public class ModConfiguredFeatures {
 
         register(context, SHINE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.SHINE_LOG),
-                new CherryTrunkPlacer(4, 1, 0, ConstantIntProvider.create(3),
+                new CherryTrunkPlacer(4, 5, 3, ConstantIntProvider.create(3),
                         UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)),
                 BlockStateProvider.of(ModBlocks.SHINE_LEAVES),
                 new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5),

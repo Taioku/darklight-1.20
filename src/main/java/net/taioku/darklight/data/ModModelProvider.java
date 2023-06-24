@@ -2,8 +2,11 @@ package net.taioku.darklight.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
@@ -29,6 +32,26 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_LEAVES);
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.SHINE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_DIRT);
+        blockStateModelGenerator.registerSingleton(ModBlocks.DARK_GRASS, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_STONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_COBBLESTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_STONE_BRICKS);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.DARK_DEEPSLATE, TexturedModel.CUBE_COLUMN);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_COBBLED_DEEPSLATE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_DEEPSLATE_BRICKS);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.DARK_DEEPSLATE_TILES, TexturedModel.CUBE_ALL);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_DIRT);
+        blockStateModelGenerator.registerSingleton(ModBlocks.SHINE_GRASS, TexturedModel.CUBE_BOTTOM_TOP);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_STONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_COBBLESTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_STONE_BRICKS);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_DEEPSLATE, TexturedModel.CUBE_COLUMN);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_COBBLED_DEEPSLATE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_DEEPSLATE_BRICKS);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_DEEPSLATE_TILES, TexturedModel.CUBE_ALL);
     }
 
     @Override

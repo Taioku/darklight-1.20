@@ -3,7 +3,7 @@
   "generator": {
     "type": "minecraft:noise",
     "settings": {
-      "sea_level": 24,
+      "sea_level": 0,
       "disable_mob_generation": true,
       "aquifers_enabled": false,
       "ore_veins_enabled": true,
@@ -25,8 +25,8 @@
         "fluid_level_floodedness": 0,
         "fluid_level_spread": 0,
         "lava": 0,
-        "temperature": "minecraft:overworld/base_3d_noise",
-        "vegetation": "minecraft:overworld/base_3d_noise",
+        "temperature": "minecraft:overworld/continents",
+        "vegetation": "minecraft:nether/base_3d_noise",
         "continents": "minecraft:overworld/continents",
         "erosion": "minecraft:overworld/erosion",
         "depth": "minecraft:overworld/depth",
@@ -371,6 +371,18 @@
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [
+        {
+          "biome": "darklight:blind",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": -1.8,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
         {
           "biome": "darklight:dark",
           "parameters": {

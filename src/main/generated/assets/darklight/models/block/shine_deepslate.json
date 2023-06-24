@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "darklight:block/shine_deepslate_top",
+    "side": "darklight:block/shine_deepslate_side"
+  }
+}
