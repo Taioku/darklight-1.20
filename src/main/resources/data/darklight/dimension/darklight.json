@@ -3,7 +3,7 @@
   "generator": {
     "type": "minecraft:noise",
     "settings": {
-      "sea_level": 20,
+      "sea_level": 0,
       "disable_mob_generation": true,
       "aquifers_enabled": true,
       "ore_veins_enabled": true,
@@ -323,6 +323,39 @@
         "type": "minecraft:sequence",
         "sequence": [
           {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "darklight:light"
+                  ]
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:vertical_gradient",
+                    "random_name": "minecraft:bedrock",
+                    "true_at_and_below": {
+                      "above_bottom": 0
+                    },
+                    "false_at_and_above": {
+                      "above_bottom": 5
+                    }
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:bedrock"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
             "type": "minecraft:condition",
             "if_true": {
               "type": "minecraft:biome",
@@ -383,6 +416,75 @@
                 }
               ]
             }
+          },
+          {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "darklight:light"
+                  ]
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:vertical_gradient",
+                    "random_name": "darklight:shine_deepslate",
+                    "true_at_and_below": {
+                      "absolute": 0
+                    },
+                    "false_at_and_above": {
+                      "absolute": 8
+                    }
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "darklight:shine_deepslate",
+                      "Properties": {
+                        "axis": "y"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:biome",
+                  "biome_is": [
+                    "darklight:light"
+                  ]
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:vertical_gradient",
+                    "random_name": "darklight:shine_stone",
+                    "true_at_and_below": {
+                      "above_bottom": 0
+                    },
+                    "false_at_and_above": {
+                      "below_top": 0
+                    }
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "darklight:shine_stone"
+                    }
+                  }
+                }
+              }
+            ]
           }
         ]
       }
