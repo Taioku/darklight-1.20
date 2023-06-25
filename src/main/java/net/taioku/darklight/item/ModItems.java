@@ -23,7 +23,7 @@ public class ModItems {
     public static final Item MORTAR = registerItem("mortar",
             new Mortar(ModBlocks.MORTAR, new FabricItemSettings()));
     public static final Item RESEARCH_TABLE = registerItem("research_table",
-            new ResearchTable(ModBlocks.RESEARCH_TABLE, new FabricItemSettings()));
+            new ResearchTableItem(ModBlocks.RESEARCH_TABLE, new FabricItemSettings()));
 
     public static final Item THUN_HELMET = registerItem("thun_helmet",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.HELMET, new FabricItemSettings()));

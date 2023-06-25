@@ -10,6 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.taioku.darklight.item.client.ResearchTableItemRenderer;
+import software.bernie.example.client.renderer.item.PistolRenderer;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.animatable.client.RenderProvider;
@@ -24,11 +25,11 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ResearchTable extends BlockItem implements GeoItem {
+public class ResearchTableItem extends BlockItem implements GeoItem {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
 
-    public ResearchTable(Block block, Settings settings) {
+    public ResearchTableItem(Block block, Settings settings) {
         super(block, settings
                 .maxCount(1));
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
@@ -37,10 +38,13 @@ public class ResearchTable extends BlockItem implements GeoItem {
     @Override
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
-            private final ResearchTableItemRenderer renderer = new ResearchTableItemRenderer();
+            private ResearchTableItemRenderer renderer;
 
             @Override
             public BuiltinModelItemRenderer getCustomRenderer() {
+                if (this.renderer == null)
+                    this.renderer = new ResearchTableItemRenderer();
+
                 return this.renderer;
             }
         });
@@ -80,6 +84,6 @@ public class ResearchTable extends BlockItem implements GeoItem {
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
+        return this.cache;
     }
 }

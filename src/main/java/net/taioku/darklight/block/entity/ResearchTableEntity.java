@@ -15,7 +15,7 @@ public class ResearchTableEntity extends BlockEntity implements GeoBlockEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public ResearchTableEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.RESEARCH_TABLE, pos, state);
+        super(ModBlockEntities.RESEARCH_TABLE_ENTITY, pos, state);
     }
 
     @Override

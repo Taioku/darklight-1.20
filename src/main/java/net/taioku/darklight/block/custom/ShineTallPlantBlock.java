@@ -1,7 +1,6 @@
 package net.taioku.darklight.block.custom;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.MapColor;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;

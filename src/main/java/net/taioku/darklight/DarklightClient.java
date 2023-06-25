@@ -19,8 +19,8 @@ public class DarklightClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHINE_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHINE_SAPLING, RenderLayer.getCutout());
 
-		BlockEntityRendererFactories.register(ModBlockEntities.MORTAR, MortarBlockRenderer::new);
-		BlockEntityRendererFactories.register(ModBlockEntities.RESEARCH_TABLE, ResearchTableBlockRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.MORTAR_ENTITY, MortarBlockRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.RESEARCH_TABLE_ENTITY, ResearchTableBlockRenderer::new);
 
 		FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SHINE_WATER, ModFluids.FLOWING_SHINE_WATER,
 				new SimpleFluidRenderHandler(

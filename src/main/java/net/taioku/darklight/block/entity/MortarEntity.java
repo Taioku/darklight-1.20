@@ -15,7 +15,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public MortarEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.MORTAR, pos, state);
+        super(ModBlockEntities.MORTAR_ENTITY, pos, state);
     }
 
     @Override
