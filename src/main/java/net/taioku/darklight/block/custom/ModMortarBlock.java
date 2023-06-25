@@ -18,10 +18,10 @@ import net.taioku.darklight.block.entity.MortarEntity;
 import org.jetbrains.annotations.Nullable;
 
 
-public class MortarBlock extends BlockWithEntity implements Waterloggable{
+public class ModMortarBlock extends BlockWithEntity implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public MortarBlock(Settings settings) {
+    public ModMortarBlock(Settings settings) {
         super(settings
                 .strength(2.0f)
                 .nonOpaque());

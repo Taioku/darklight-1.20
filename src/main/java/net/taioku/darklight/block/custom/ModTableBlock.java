@@ -1,6 +1,5 @@
 package net.taioku.darklight.block.custom;
 
-import io.netty.util.Attribute;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.TablePart;
@@ -25,12 +24,12 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
 import org.jetbrains.annotations.Nullable;
 
-public class Table extends BlockWithEntity implements Waterloggable {
+public class ModTableBlock extends BlockWithEntity implements Waterloggable {
     public static final EnumProperty<TablePart> PART = EnumProperty.of("part", TablePart.class);
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public static final DirectionProperty HORIZONTAL_FACING = Properties.HORIZONTAL_FACING;
 
-    public Table(Settings settings) {
+    public ModTableBlock(Settings settings) {
         super(settings
                 .nonOpaque());
         setDefaultState(getDefaultState()
@@ -49,7 +48,7 @@ public class Table extends BlockWithEntity implements Waterloggable {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        if (direction == Table.getDirectionTowardsOtherPart(state.get(PART), state.get(HORIZONTAL_FACING))) {
+        if (direction == ModTableBlock.getDirectionTowardsOtherPart(state.get(PART), state.get(HORIZONTAL_FACING))) {
             if (neighborState.isOf(this) && neighborState.get(PART) != state.get(PART)) {
                 return state;
             }
@@ -102,7 +101,7 @@ public class Table extends BlockWithEntity implements Waterloggable {
         BlockPos blockPos;
         BlockState blockState;
         TablePart tablePart;
-        if (!world.isClient && player.isCreative() && (tablePart = state.get(PART)) == TablePart.LEFT && (blockState = world.getBlockState(blockPos = pos.offset(Table.getDirectionTowardsOtherPart(tablePart, state.get(HORIZONTAL_FACING))))).isOf(this) && blockState.get(PART) == TablePart.RIGHT) {
+        if (!world.isClient && player.isCreative() && (tablePart = state.get(PART)) == TablePart.LEFT && (blockState = world.getBlockState(blockPos = pos.offset(ModTableBlock.getDirectionTowardsOtherPart(tablePart, state.get(HORIZONTAL_FACING))))).isOf(this) && blockState.get(PART) == TablePart.RIGHT) {
             world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL | Block.SKIP_DROPS);
             world.syncWorldEvent(player, WorldEvents.BLOCK_BROKEN, blockPos, Block.getRawIdFromState(blockState));
         }

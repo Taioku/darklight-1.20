@@ -6,8 +6,8 @@ import net.minecraft.util.math.BlockPos;
 import net.taioku.darklight.block.entity.ResearchTableEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class ResearchTable extends Table {
-    public ResearchTable(Settings settings) {
+public class ModResearchTableBlock extends ModTableBlock {
+    public ModResearchTableBlock(Settings settings) {
         super(settings.strength(2.0f));
     }
 

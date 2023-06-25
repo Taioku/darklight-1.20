@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.taioku.darklight.item.client.MortarItemRenderer;
+import net.taioku.darklight.item.client.JarItemRenderer;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.animatable.client.RenderProvider;
@@ -23,23 +23,25 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class Mortar extends BlockItem implements GeoItem {
+public class JarItem extends BlockItem implements GeoItem {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
 
-    public Mortar(Block block, Settings settings) {
-        super(block, settings
-                .maxCount(1));
+    public JarItem(Block block, Settings settings) {
+        super(block, settings);
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
     }
 
     @Override
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
-            private final MortarItemRenderer renderer = new MortarItemRenderer();
+            private JarItemRenderer renderer;
 
             @Override
             public BuiltinModelItemRenderer getCustomRenderer() {
+                if (this.renderer == null)
+                    this.renderer = new JarItemRenderer();
+
                 return this.renderer;
             }
         });
@@ -52,7 +54,7 @@ public class Mortar extends BlockItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this,"mortar_controller",0,this::predicate));
+        controllerRegistrar.add(new AnimationController<>(this,"jar_controller",0,this::predicate));
 
     }
 
@@ -63,12 +65,12 @@ public class Mortar extends BlockItem implements GeoItem {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("darklight.item.custom.mortar.tooltip"));
+        tooltip.add(Text.translatable("darklight.item.custom.jar.tooltip"));
         if (Screen.hasAltDown()) {
-            tooltip.add(Text.translatable("darklight.item.custom.mortar.alt_tooltip"));
+            tooltip.add(Text.translatable("darklight.item.custom.jar.alt_tooltip"));
         }
         else {
-            tooltip.add(Text.translatable("darklight.item.custom.mortar.!alt_tooltip").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("darklight.item.custom.jar.!alt_tooltip").formatted(Formatting.DARK_GRAY));
         }
     }
 

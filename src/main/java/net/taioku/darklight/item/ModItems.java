@@ -21,9 +21,19 @@ public class ModItems {
             new ThunIngot(new FabricItemSettings()));
 
     public static final Item MORTAR = registerItem("mortar",
-            new Mortar(ModBlocks.MORTAR, new FabricItemSettings()));
+            new MortarItem(ModBlocks.MORTAR, new FabricItemSettings()));
     public static final Item RESEARCH_TABLE = registerItem("research_table",
             new ResearchTableItem(ModBlocks.RESEARCH_TABLE, new FabricItemSettings()));
+    public static final Item PILLAR = registerItem("pillar",
+            new PillarItem(ModBlocks.PILLAR, new FabricItemSettings()));
+    public static final Item JAR = registerItem("jar",
+            new JarItem(ModBlocks.JAR, new FabricItemSettings()));
+
+
+    public static final Item REINFORCED_BOTTLE = registerItem("reinforced_bottle",
+            new ReinforcedBottleItem(new FabricItemSettings()));
+    public static final Item SHINE_BOTTLE = registerItem("shine_bottle",
+            new Item(new FabricItemSettings().maxCount(16)));
 
     public static final Item THUN_HELMET = registerItem("thun_helmet",
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -48,6 +58,10 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);
         addToItemGroup(ModItemGroup.DARKLIGHT, MORTAR);
         addToItemGroup(ModItemGroup.DARKLIGHT, RESEARCH_TABLE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, PILLAR);
+        addToItemGroup(ModItemGroup.DARKLIGHT, JAR);
+        addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_BOTTLE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_BOTTLE);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_HELMET);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_CHESTPLATE);

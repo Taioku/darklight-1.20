@@ -9,7 +9,9 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.entity.ModBlockEntities;
+import net.taioku.darklight.block.entity.client.JarBlockRenderer;
 import net.taioku.darklight.block.entity.client.MortarBlockRenderer;
+import net.taioku.darklight.block.entity.client.PillarBlockRenderer;
 import net.taioku.darklight.block.entity.client.ResearchTableBlockRenderer;
 import net.taioku.darklight.fluid.ModFluids;
 
@@ -21,6 +23,8 @@ public class DarklightClient implements ClientModInitializer {
 
 		BlockEntityRendererFactories.register(ModBlockEntities.MORTAR_ENTITY, MortarBlockRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.RESEARCH_TABLE_ENTITY, ResearchTableBlockRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.PILLAR_ENTITY, PillarBlockRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.JAR_ENTITY, JarBlockRenderer::new);
 
 		FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SHINE_WATER, ModFluids.FLOWING_SHINE_WATER,
 				new SimpleFluidRenderHandler(

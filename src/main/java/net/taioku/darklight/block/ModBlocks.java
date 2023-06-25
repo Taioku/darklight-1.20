@@ -2,16 +2,15 @@ package net.taioku.darklight.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.sapling.DarkOakSaplingGenerator;
-import net.minecraft.block.sapling.SaplingGenerator;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.custom.*;
@@ -28,9 +27,16 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
 
     public static final Block MORTAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "mortar"),
-            new MortarBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
+            new ModMortarBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
+
     public static final Block RESEARCH_TABLE = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "research_table"),
-            new ResearchTable(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
+            new ModResearchTableBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
+
+    public static final Block PILLAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "pillar"),
+            new ModPillarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE
+            )));
+    public static final Block JAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "jar"),
+            new ModJarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     // -------------------------------------------------- SHINE --------------------------------------------------
 
@@ -48,7 +54,7 @@ public class ModBlocks {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)), ModItemGroup.DARKLIGHT);
 
     public static final Block SHINE_GRASS = registerBlock("shine_grass",
-            new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS).luminance(state -> 3)), ModItemGroup.DARKLIGHT);
+            new ShineFernBlock(AbstractBlock.Settings.copy(Blocks.GRASS).luminance(state -> 3)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_TALL_GRASS = registerBlock("shine_tall_grass",
             new ShineTallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS).luminance(state -> 5)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_SAPLING = registerBlock("shine_sapling",
