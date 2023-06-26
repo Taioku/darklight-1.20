@@ -9,6 +9,7 @@ import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
+import net.taioku.darklight.recipe.ModRecipes;
 import net.taioku.darklight.screen.ModScreenHandlers;
 import net.taioku.darklight.world.dimension.ModDimensions;
 import org.slf4j.Logger;
@@ -38,5 +39,7 @@ public class Darklight implements ModInitializer {
 		ModFluids.register();
 
 		ModScreenHandlers.registerAllScreenHandlers();
+
+		ModRecipes.registerRecipes();
 	}
 }

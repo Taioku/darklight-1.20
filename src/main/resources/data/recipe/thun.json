@@ -1,0 +1,11 @@
+{
+  "type": "darklight:mortar",
+  "ingredients": [
+    {
+      "item": "darklight:raw_thun"
+    }
+  ],
+  "output": {
+    "item": "darklight:thun_ingot"
+  }
+}
