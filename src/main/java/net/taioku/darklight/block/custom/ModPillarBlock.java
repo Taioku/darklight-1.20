@@ -14,7 +14,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
-import net.taioku.darklight.block.entity.PillarEntity;
+import net.taioku.darklight.block.entity.entities.PillarEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class ModPillarBlock extends BlockWithEntity implements Waterloggable {

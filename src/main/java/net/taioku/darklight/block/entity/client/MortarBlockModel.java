@@ -2,7 +2,7 @@ package net.taioku.darklight.block.entity.client;
 
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.MortarEntity;
+import net.taioku.darklight.block.entity.entities.MortarEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class MortarBlockModel extends GeoModel<MortarEntity> {

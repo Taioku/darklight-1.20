@@ -2,7 +2,7 @@ package net.taioku.darklight.block.entity.client;
 
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.ResearchTableEntity;
+import net.taioku.darklight.block.entity.entities.ResearchTableEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class ResearchTableBlockModel extends GeoModel<ResearchTableEntity> {

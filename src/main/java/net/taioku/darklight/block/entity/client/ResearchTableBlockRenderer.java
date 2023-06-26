@@ -9,7 +9,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.custom.ModResearchTableBlock;
-import net.taioku.darklight.block.entity.ResearchTableEntity;
+import net.taioku.darklight.block.entity.entities.ResearchTableEntity;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
 public class ResearchTableBlockRenderer extends GeoBlockRenderer<ResearchTableEntity> {

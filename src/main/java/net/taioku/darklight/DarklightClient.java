@@ -4,6 +4,8 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.util.Identifier;
@@ -14,6 +16,8 @@ import net.taioku.darklight.block.entity.client.MortarBlockRenderer;
 import net.taioku.darklight.block.entity.client.PillarBlockRenderer;
 import net.taioku.darklight.block.entity.client.ResearchTableBlockRenderer;
 import net.taioku.darklight.fluid.ModFluids;
+import net.taioku.darklight.screen.ModScreenHandlers;
+import net.taioku.darklight.screen.mortar.MortarScreen;
 
 public class DarklightClient implements ClientModInitializer {
 	@Override
@@ -35,5 +39,7 @@ public class DarklightClient implements ClientModInitializer {
 
 		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
 				ModFluids.STILL_SHINE_WATER, ModFluids.FLOWING_SHINE_WATER);
+
+		HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
 	}
 }

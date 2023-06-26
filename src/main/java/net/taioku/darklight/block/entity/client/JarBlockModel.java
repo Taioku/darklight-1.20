@@ -2,8 +2,7 @@ package net.taioku.darklight.block.entity.client;
 
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.JarEntity;
-import net.taioku.darklight.block.entity.PillarEntity;
+import net.taioku.darklight.block.entity.entities.JarEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class JarBlockModel extends GeoModel<JarEntity> {

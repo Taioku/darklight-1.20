@@ -7,6 +7,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
+import net.taioku.darklight.block.entity.entities.JarEntity;
+import net.taioku.darklight.block.entity.entities.MortarEntity;
+import net.taioku.darklight.block.entity.entities.PillarEntity;
+import net.taioku.darklight.block.entity.entities.ResearchTableEntity;
 
 public class ModBlockEntities {
     public static BlockEntityType<MortarEntity> MORTAR_ENTITY;
