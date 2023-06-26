@@ -36,7 +36,7 @@ public class MortarScreen extends HandledScreen<MortarScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 105, y + 33, 176, 0, 8, handler.getScaledProgress());
+            context.drawTexture(TEXTURE, x + 3, y + 4, 0, 166, 95, handler.getScaledProgress());
         }
     }
 

@@ -16,19 +16,23 @@ public class MortarScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public MortarScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, new SimpleInventory(7), new ArrayPropertyDelegate(2));
     }
 
     public MortarScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.MORTAR_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 3);
+        checkSize(inventory, 7);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new Slot(inventory, 0, 12,15));
-        this.addSlot(new Slot(inventory, 1, 86,15));
-        this.addSlot(new Slot(inventory, 2, 86,60));
+        this.addSlot(new Slot(inventory, 0, 25,9));
+        this.addSlot(new Slot(inventory, 1, 15,42));
+        this.addSlot(new Slot(inventory, 2, 42,62));
+        this.addSlot(new Slot(inventory, 3, 69,42));
+        this.addSlot(new Slot(inventory, 4, 60,9));
+        this.addSlot(new Slot(inventory, 5, 42,32));
+        this.addSlot(new Slot(inventory, 6, 125,32));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -43,7 +47,7 @@ public class MortarScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the width in pixels of your arrow
+        int progressArrowSize = 88; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -82,7 +86,7 @@ public class MortarScreenHandler extends ScreenHandler {
     private void addPlayerInventory(PlayerInventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 83 + i * 18));
             }
         }
     }

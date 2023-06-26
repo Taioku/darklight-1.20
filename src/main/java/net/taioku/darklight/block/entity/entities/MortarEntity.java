@@ -36,7 +36,7 @@ import java.util.Optional;
 
 public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -159,10 +159,10 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
                 .getFirstMatch(MortarRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            entity.removeStack(1, 1);
+            entity.removeStack(0, 1);
 
-            entity.setStack(2, new ItemStack(recipe.get().getOutput(registryManager).getItem(),
-                    entity.getStack(2).getCount() + 1));
+            entity.setStack(6, new ItemStack(recipe.get().getOutput(registryManager).getItem(),
+                    entity.getStack(6).getCount() + 1));
 
             entity.resetProgress();
         }
@@ -183,10 +183,10 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
+        return inventory.getStack(6).getItem() == output || inventory.getStack(6).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+        return inventory.getStack(6).getMaxCount() > inventory.getStack(6).getCount();
     }
 }
