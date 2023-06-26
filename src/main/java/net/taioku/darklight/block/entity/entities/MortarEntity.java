@@ -170,7 +170,6 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
 
     private static boolean hasRecipe(MortarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
-        Darklight.LOGGER.debug("inv: " + inventory + " size: " + entity.size());
         DynamicRegistryManager registryManager = entity.getWorld().getRegistryManager();
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));

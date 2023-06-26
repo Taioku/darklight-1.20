@@ -11,6 +11,7 @@ import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.custom.ModResearchTableBlock;
 import net.taioku.darklight.block.entity.entities.ResearchTableEntity;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
+import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 public class ResearchTableBlockRenderer extends GeoBlockRenderer<ResearchTableEntity> {
     public ResearchTableBlockRenderer(BlockEntityRendererFactory.Context context) {

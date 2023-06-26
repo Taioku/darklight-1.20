@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import net.taioku.darklight.Darklight;
 
 public class MortarRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
@@ -28,7 +29,11 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
             return false;
         }
 
-        return recipeItems.get(0).test(inventory.getStack(0));
+        return recipeItems.get(0).test(inventory.getStack(0)) &&
+                recipeItems.get(1).test(inventory.getStack(1)) &&
+                recipeItems.get(2).test(inventory.getStack(2)) &&
+                recipeItems.get(3).test(inventory.getStack(3)) &&
+                recipeItems.get(4).test(inventory.getStack(4));
     }
 
     @Override
@@ -76,7 +81,7 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(5, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
@@ -103,6 +108,7 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
+
             buf.writeItemStack(recipe.output);
         }
     }
