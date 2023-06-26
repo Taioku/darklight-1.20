@@ -24,7 +24,7 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
     }
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if (world.isClient) {
+        if (world.isClient()) {
             return false;
         }
 

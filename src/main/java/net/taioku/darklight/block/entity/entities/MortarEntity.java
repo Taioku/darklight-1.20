@@ -150,6 +150,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
 
     private static void craftItem(MortarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
+        DynamicRegistryManager registryManager = entity.getWorld().getRegistryManager();
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
@@ -160,8 +161,8 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
         if(hasRecipe(entity)) {
             entity.removeStack(1, 1);
 
-            entity.setStack(2, new ItemStack(recipe.get().craft(inventory, entity.getWorld().getRegistryManager()).getItem(),
-                    recipe.get().craft(inventory, entity.getWorld().getRegistryManager()).getCount() +1));
+            entity.setStack(2, new ItemStack(recipe.get().getOutput(registryManager).getItem(),
+                    entity.getStack(2).getCount() + 1));
 
             entity.resetProgress();
         }
@@ -169,6 +170,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
 
     private static boolean hasRecipe(MortarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
+        DynamicRegistryManager registryManager = entity.getWorld().getRegistryManager();
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
@@ -177,7 +179,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
                 .getFirstMatch(MortarRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().craft(inventory, entity.getWorld().getRegistryManager()).getItem());
+                && canInsertItemIntoOutputSlot(inventory, match.get().getOutput(registryManager).getItem());
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
