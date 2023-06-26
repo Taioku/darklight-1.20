@@ -29,6 +29,12 @@ import net.taioku.darklight.screen.mortar.MortarScreen;
 public class DarklightClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		registerRenderers();
+
+		HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
+	}
+
+	private static void registerRenderers() {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHINE_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHINE_SAPLING, RenderLayer.getCutout());
 
@@ -37,7 +43,7 @@ public class DarklightClient implements ClientModInitializer {
 		BlockEntityRendererFactories.register(ModBlockEntities.JAR_ENTITY, JarBlockRenderer::new);
 
 		BlockEntityRendererFactories.register(ModBlockEntities.PILLAR_ENTITY, PillarBlockRenderer::new);
-		
+
 		FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_SHINE_WATER, ModFluids.FLOWING_SHINE_WATER,
 				new SimpleFluidRenderHandler(
 						new Identifier("minecraft:block/water_still"),
@@ -47,7 +53,5 @@ public class DarklightClient implements ClientModInitializer {
 
 		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
 				ModFluids.STILL_SHINE_WATER, ModFluids.FLOWING_SHINE_WATER);
-
-		HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
 	}
 }

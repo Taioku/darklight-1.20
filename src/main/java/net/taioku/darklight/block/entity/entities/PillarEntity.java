@@ -6,12 +6,16 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.entity.util.ImplementedInventory;
 import net.taioku.darklight.networking.ModPackets;
@@ -30,15 +34,54 @@ public class PillarEntity extends BlockEntity implements GeoBlockEntity, Impleme
         super(ModBlockEntities.PILLAR_ENTITY, pos, state);
     }
 
+
+
+    /* ---------------------- BLOCK RENDER ---------------------- */
     public ItemStack getRenderStack() {
         return this.getStack(0);
     }
 
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this,"pillar_controller",0,this::predicate));
+    }
+
+    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return cache;
+    }
+    /* ---------------------- BLOCK RENDER ---------------------- */
+
+
+
+    /* ---------------------- BLOCK ENTITY ---------------------- */
+    @Override
+    public DefaultedList<ItemStack> getItems() {
+        return this.inventory;
+    }
+    @Override
+    protected void writeNbt(NbtCompound nbt) {
+        super.writeNbt(nbt);
+        Inventories.writeNbt(nbt, inventory);
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        Inventories.readNbt(nbt, inventory);
+    }
+
+    /*
     public void setInventory(DefaultedList<ItemStack> list) {
         for (int i = 0; i < inventory.size(); i++) {
             this.inventory.set(i ,inventory.get(i));
         }
-    }
+    }*/
 
     @Override
     public void markDirty() {
@@ -59,24 +102,22 @@ public class PillarEntity extends BlockEntity implements GeoBlockEntity, Impleme
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this,"pillar_controller",0,this::predicate));
-    }
-
-    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
-        return PlayState.CONTINUE;
+    public ItemStack getStack(int slot) {
+        return getItems().get(slot);
     }
 
     @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
+    public ItemStack removeStack(int slot) {
+        return Inventories.removeStack(getItems(), slot);
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
-        return this.inventory;
+    public void setStack(int slot, ItemStack stack) {
+        getItems().set(slot, stack);
+        if (stack.getCount() > stack.getMaxCount()) {
+            stack.setCount(stack.getMaxCount());
+        }
     }
-
+    /* ---------------------- BLOCK ENTITY ---------------------- */
 
 }

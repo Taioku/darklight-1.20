@@ -4,10 +4,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.item.ModItems;
+import net.taioku.darklight.recipe.mortar.MortarRecipe;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -62,5 +64,26 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(ModItems.THUN_INGOT))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.THUN_BOOTS)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.REINFORCED_BOTTLE)
+                .pattern(" L ")
+                .pattern("IBI")
+                .pattern("   ")
+                .input('L', ModItems.REINFORCED_LEATHER)
+                .input('I', Items.IRON_INGOT)
+                .input('B', Items.GLASS_BOTTLE)
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.REINFORCED_BOTTLE)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.REINFORCED_LEATHER)
+                .pattern("SIS")
+                .pattern("SLS")
+                .pattern("SIS")
+                .input('S', Items.STRING)
+                .input('I', Items.IRON_NUGGET)
+                .input('L', Items.LEATHER)
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.REINFORCED_LEATHER)));
     }
 }

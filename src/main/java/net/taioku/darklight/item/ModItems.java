@@ -30,6 +30,8 @@ public class ModItems {
             new JarItem(ModBlocks.JAR, new FabricItemSettings()));
 
 
+    public static final Item REINFORCED_LEATHER = registerItem("reinforced_leather",
+            new Item(new FabricItemSettings()));
     public static final Item REINFORCED_BOTTLE = registerItem("reinforced_bottle",
             new ReinforcedBottleItem(new FabricItemSettings()));
     public static final Item SHINE_BOTTLE = registerItem("shine_bottle",
@@ -61,6 +63,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, PILLAR);
         addToItemGroup(ModItemGroup.DARKLIGHT, JAR);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_BOTTLE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_LEATHER);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_BOTTLE);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_HELMET);
