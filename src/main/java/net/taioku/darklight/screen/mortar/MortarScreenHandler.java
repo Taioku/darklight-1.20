@@ -27,11 +27,11 @@ public class MortarScreenHandler extends ScreenHandler {
         this.propertyDelegate = delegate;
 
         this.addSlot(new Slot(inventory, 0, 25,9));
-        this.addSlot(new Slot(inventory, 1, 15,42));
-        this.addSlot(new Slot(inventory, 2, 42,62));
-        this.addSlot(new Slot(inventory, 3, 69,42));
-        this.addSlot(new Slot(inventory, 4, 60,9));
-        this.addSlot(new Slot(inventory, 5, 42,32));
+        this.addSlot(new Slot(inventory, 1, 16,42));
+        this.addSlot(new Slot(inventory, 2, 43,62));
+        this.addSlot(new Slot(inventory, 3, 70,42));
+        this.addSlot(new Slot(inventory, 4, 61,9));
+        this.addSlot(new Slot(inventory, 5, 43,32));
         this.addSlot(new Slot(inventory, 6, 125,32));
 
         addPlayerInventory(playerInventory);
@@ -47,7 +47,7 @@ public class MortarScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 88; // This is the height in pixels of your arrow
+        int progressArrowSize = 88; // This is the height in pixels of the arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -86,14 +86,14 @@ public class MortarScreenHandler extends ScreenHandler {
     private void addPlayerInventory(PlayerInventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 83 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(PlayerInventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
 }

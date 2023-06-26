@@ -36,11 +36,11 @@ import java.util.Optional;
 
 public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 80;
 
     public MortarEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.MORTAR_ENTITY, pos, state);
@@ -161,8 +161,8 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
         if(hasRecipe(entity)) {
             entity.removeStack(0, 1);
 
-            entity.setStack(6, new ItemStack(recipe.get().getOutput(registryManager).getItem(),
-                    entity.getStack(6).getCount() + 1));
+            entity.setStack(5, new ItemStack(recipe.get().getOutput(registryManager).getItem(),
+                    entity.getStack(5).getCount() + 1));
 
             entity.resetProgress();
         }
@@ -170,6 +170,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
 
     private static boolean hasRecipe(MortarEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
+        Darklight.LOGGER.debug("inv: " + inventory + " size: " + entity.size());
         DynamicRegistryManager registryManager = entity.getWorld().getRegistryManager();
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
@@ -183,10 +184,10 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(6).getItem() == output || inventory.getStack(6).isEmpty();
+        return inventory.getStack(5).getItem() == output || inventory.getStack(5).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(6).getMaxCount() > inventory.getStack(6).getCount();
+        return inventory.getStack(5).getMaxCount() > inventory.getStack(5).getCount();
     }
 }

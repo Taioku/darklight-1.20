@@ -28,7 +28,7 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
             return false;
         }
 
-        return recipeItems.get(0).test(inventory.getStack(1));
+        return recipeItems.get(0).test(inventory.getStack(0));
     }
 
     @Override
