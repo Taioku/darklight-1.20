@@ -76,13 +76,6 @@ public class PillarEntity extends BlockEntity implements GeoBlockEntity, Impleme
         Inventories.readNbt(nbt, inventory);
     }
 
-    /*
-    public void setInventory(DefaultedList<ItemStack> list) {
-        for (int i = 0; i < inventory.size(); i++) {
-            this.inventory.set(i ,inventory.get(i));
-        }
-    }*/
-
     @Override
     public void markDirty() {
         if (!world.isClient()) {
