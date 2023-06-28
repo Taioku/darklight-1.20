@@ -2,25 +2,13 @@ package net.taioku.darklight.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.JukeboxBlockEntity;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.map.MapState;
-import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -36,8 +24,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.entities.PillarEntity;
+import net.taioku.darklight.block.entity.entities.PillarBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 import static org.apache.commons.lang3.RandomUtils.nextFloat;
@@ -90,7 +77,7 @@ public class ModPillarBlock extends BlockWithEntity implements Waterloggable {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new PillarEntity(pos, state);
+        return new PillarBlockEntity(pos, state);
     }
 
     @Override
@@ -101,8 +88,11 @@ public class ModPillarBlock extends BlockWithEntity implements Waterloggable {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
-        if (world.isClient) return ActionResult.SUCCESS;
         Inventory blockEntity = (Inventory) world.getBlockEntity(pos);
+        if (world.isClient) {
+            blockEntity.setStack(0, new ItemStack(Blocks.AIR));
+            return ActionResult.SUCCESS;
+        }
         if (!player.getStackInHand(hand).isEmpty()) {
             if (blockEntity.getStack(0).isEmpty()) {
                 world.playSound(null, pos, SoundEvents.ITEM_BOOK_PUT, SoundCategory.BLOCKS, 1.0f, nextFloat(1.0f, 2.0f));
@@ -122,16 +112,16 @@ public class ModPillarBlock extends BlockWithEntity implements Waterloggable {
                 player.getInventory().offerOrDrop(blockEntity.getStack(0));
                 blockEntity.removeStack(0);
             }
+            return ActionResult.SUCCESS;
         }
-        return ActionResult.SUCCESS;
     }
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof PillarEntity) {
-            ItemScatterer.spawn(world, pos, (PillarEntity)blockEntity);
+        if (blockEntity instanceof PillarBlockEntity) {
+            ItemScatterer.spawn(world, pos, (PillarBlockEntity)blockEntity);
             world.updateComparators(pos, this);
         }
         super.onStateReplaced(state, world, pos, newState, moved);

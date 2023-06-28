@@ -14,7 +14,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
-import net.taioku.darklight.block.entity.entities.JarEntity;
+import net.taioku.darklight.block.entity.entities.JarBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class ModJarBlock extends BlockWithEntity implements Waterloggable {
@@ -67,7 +67,7 @@ public class ModJarBlock extends BlockWithEntity implements Waterloggable {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new JarEntity(pos, state);
+        return new JarBlockEntity(pos, state);
     }
 
     @Override

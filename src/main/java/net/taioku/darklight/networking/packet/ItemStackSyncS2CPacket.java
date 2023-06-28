@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.taioku.darklight.block.entity.entities.PillarEntity;
+import net.taioku.darklight.block.entity.entities.PillarBlockEntity;
 
 public class ItemStackSyncS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
@@ -19,7 +19,7 @@ public class ItemStackSyncS2CPacket {
         }
         BlockPos position = buf.readBlockPos();
 
-        if (client.world.getBlockEntity(position) instanceof PillarEntity blockEntity) {
+        if (client.world.getBlockEntity(position) instanceof PillarBlockEntity blockEntity) {
             blockEntity.setInventory(list);
         }
     }

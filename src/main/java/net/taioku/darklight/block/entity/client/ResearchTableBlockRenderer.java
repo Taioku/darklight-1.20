@@ -9,17 +9,16 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.custom.ModResearchTableBlock;
-import net.taioku.darklight.block.entity.entities.ResearchTableEntity;
+import net.taioku.darklight.block.entity.entities.ResearchTableBlockEntity;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
-import software.bernie.geckolib.renderer.GeoItemRenderer;
 
-public class ResearchTableBlockRenderer extends GeoBlockRenderer<ResearchTableEntity> {
+public class ResearchTableBlockRenderer extends GeoBlockRenderer<ResearchTableBlockEntity> {
     public ResearchTableBlockRenderer(BlockEntityRendererFactory.Context context) {
         super(new ResearchTableBlockModel());
     }
 
     @Override
-    public void defaultRender(MatrixStack poseStack, ResearchTableEntity animatable, VertexConsumerProvider bufferSource, RenderLayer renderType, VertexConsumer buffer, float yaw, float partialTick, int packedLight) {
+    public void defaultRender(MatrixStack poseStack, ResearchTableBlockEntity animatable, VertexConsumerProvider bufferSource, RenderLayer renderType, VertexConsumer buffer, float yaw, float partialTick, int packedLight) {
         BlockState state = animatable.getWorld().getBlockState(animatable.getPos());
         if (state.getBlock() == ModBlocks.RESEARCH_TABLE && state.get(ModResearchTableBlock.PART).equals(TablePart.LEFT)) {
             super.defaultRender(poseStack, animatable, bufferSource, null, null, 0, partialTick, packedLight);

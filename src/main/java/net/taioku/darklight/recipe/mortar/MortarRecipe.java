@@ -29,8 +29,6 @@ public class MortarRecipe implements Recipe<SimpleInventory> {
             return false;
         }
 
-        Darklight.LOGGER.info(recipeItems.get(0).toString());
-
         return recipeItems.get(0).test(inventory.getStack(0)) &&
                 recipeItems.get(1).test(inventory.getStack(1)) &&
                 recipeItems.get(2).test(inventory.getStack(2)) &&

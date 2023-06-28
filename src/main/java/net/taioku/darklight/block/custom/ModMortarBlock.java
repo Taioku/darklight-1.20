@@ -24,7 +24,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.taioku.darklight.block.entity.ModBlockEntities;
-import net.taioku.darklight.block.entity.entities.MortarEntity;
+import net.taioku.darklight.block.entity.entities.MortarBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -87,8 +87,8 @@ public class ModMortarBlock extends BlockWithEntity implements BlockEntityProvid
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof MortarEntity) {
-                ItemScatterer.spawn(world, pos, (MortarEntity)blockEntity);
+            if (blockEntity instanceof MortarBlockEntity) {
+                ItemScatterer.spawn(world, pos, (MortarBlockEntity)blockEntity);
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -110,13 +110,13 @@ public class ModMortarBlock extends BlockWithEntity implements BlockEntityProvid
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.MORTAR_ENTITY, MortarEntity::tick);
+        return checkType(type, ModBlockEntities.MORTAR_ENTITY, MortarBlockEntity::tick);
     }
 
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new MortarEntity(pos, state);
+        return new MortarBlockEntity(pos, state);
     }
 
     @Override

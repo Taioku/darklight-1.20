@@ -3,16 +3,8 @@ package net.taioku.darklight.block.entity.entities;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.PillarBlock;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.entity.data.TrackedData;
-import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -22,7 +14,6 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.taioku.darklight.block.entity.ModBlockEntities;
@@ -36,11 +27,11 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
-public class PillarEntity extends BlockEntity implements GeoBlockEntity, ImplementedInventory {
+public class PillarBlockEntity extends BlockEntity implements GeoBlockEntity, ImplementedInventory {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
-    public PillarEntity(BlockPos pos, BlockState state) {
+    public PillarBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.PILLAR_ENTITY, pos, state);
     }
 
@@ -139,5 +130,4 @@ public class PillarEntity extends BlockEntity implements GeoBlockEntity, Impleme
         super.markDirty();
     }
     /* ---------------------- BLOCK ENTITY ---------------------- */
-
 }

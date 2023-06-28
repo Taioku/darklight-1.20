@@ -3,7 +3,7 @@ package net.taioku.darklight.block.custom;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
-import net.taioku.darklight.block.entity.entities.ResearchTableEntity;
+import net.taioku.darklight.block.entity.entities.ResearchTableBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class ModResearchTableBlock extends ModTableBlock {
@@ -14,6 +14,6 @@ public class ModResearchTableBlock extends ModTableBlock {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new ResearchTableEntity(pos, state);
+        return new ResearchTableBlockEntity(pos, state);
     }
 }

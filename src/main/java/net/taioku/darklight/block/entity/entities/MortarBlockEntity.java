@@ -14,17 +14,13 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.entity.util.ImplementedInventory;
-import net.taioku.darklight.item.ModItems;
 import net.taioku.darklight.recipe.mortar.MortarRecipe;
 import net.taioku.darklight.screen.mortar.MortarScreenHandler;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +34,7 @@ import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.Optional;
 
-public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
+public class MortarBlockEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
 
@@ -46,22 +42,22 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
     private int progress = 0;
     private int maxProgress = 80;
 
-    public MortarEntity(BlockPos pos, BlockState state) {
+    public MortarBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.MORTAR_ENTITY, pos, state);
 
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
                 switch (index) {
-                    case 0: return MortarEntity.this.progress;
-                    case 1: return MortarEntity.this.maxProgress;
+                    case 0: return MortarBlockEntity.this.progress;
+                    case 1: return MortarBlockEntity.this.maxProgress;
                     default: return 0;
                 }
             }
 
             public void set(int index, int value) {
                 switch(index) {
-                    case 0: MortarEntity.this.progress = value; break;
-                    case 1: MortarEntity.this.maxProgress = value; break;
+                    case 0: MortarBlockEntity.this.progress = value; break;
+                    case 1: MortarBlockEntity.this.maxProgress = value; break;
                 }
             }
 
@@ -130,7 +126,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
         this.progress = 0;
     }
 
-    public static void tick(World world, BlockPos blockPos, BlockState blockState, MortarEntity entity) {
+    public static void tick(World world, BlockPos blockPos, BlockState blockState, MortarBlockEntity entity) {
         if (world.isClient) {
             return;
         }
@@ -146,7 +142,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
         }
     }
 
-    private static void craftItem(MortarEntity entity) {
+    private static void craftItem(MortarBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         DynamicRegistryManager registryManager = entity.getWorld().getRegistryManager();
         for (int i = 0; i < entity.size(); i++) {
@@ -178,7 +174,7 @@ public class MortarEntity extends BlockEntity implements GeoBlockEntity, NamedSc
         }
     }
 
-    private static boolean hasRecipe(MortarEntity entity) {
+    private static boolean hasRecipe(MortarBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         DynamicRegistryManager registryManager = entity.getWorld().getRegistryManager();
         for (int i = 0; i < entity.size(); i++) {

@@ -1,27 +1,23 @@
 package net.taioku.darklight.block.entity.client;
 
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.entities.PillarEntity;
-import software.bernie.geckolib.cache.object.BakedGeoModel;
+import net.taioku.darklight.block.entity.entities.PillarBlockEntity;
 import software.bernie.geckolib.model.GeoModel;
-import software.bernie.geckolib.renderer.GeoRenderer;
 
-public class PillarBlockModel extends GeoModel<PillarEntity> {
+public class PillarBlockModel extends GeoModel<PillarBlockEntity> {
     @Override
-    public Identifier getModelResource(PillarEntity animatable) {
+    public Identifier getModelResource(PillarBlockEntity animatable) {
         return new Identifier(Darklight.MOD_ID, "geo/pillar.geo.json");
     }
 
     @Override
-    public Identifier getTextureResource(PillarEntity animatable) {
+    public Identifier getTextureResource(PillarBlockEntity animatable) {
         return new Identifier(Darklight.MOD_ID, "textures/block/pillar.png");
     }
 
     @Override
-    public Identifier getAnimationResource(PillarEntity animatable) {
+    public Identifier getAnimationResource(PillarBlockEntity animatable) {
         return new Identifier(Darklight.MOD_ID, "animations/pillar.animation.json");
     }
 }
