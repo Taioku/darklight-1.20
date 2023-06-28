@@ -14,14 +14,13 @@ public class ItemStackSyncS2CPacket {
                                PacketByteBuf buf, PacketSender responseSender) {
         int size = buf.readInt();
         DefaultedList<ItemStack> list = DefaultedList.ofSize(size, ItemStack.EMPTY);
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             list.set(i, buf.readItemStack());
         }
         BlockPos position = buf.readBlockPos();
 
-        /*
-        if(client.world.getBlockEntity(position) instanceof PillarEntity blockEntity) {
+        if (client.world.getBlockEntity(position) instanceof PillarEntity blockEntity) {
             blockEntity.setInventory(list);
-        }*/
+        }
     }
 }

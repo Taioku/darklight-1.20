@@ -2,7 +2,12 @@ package net.taioku.darklight.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.JukeboxBlockEntity;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -101,12 +106,16 @@ public class ModPillarBlock extends BlockWithEntity implements Waterloggable {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) return ActionResult.SUCCESS;
+        world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
+
         Inventory blockEntity = (Inventory) world.getBlockEntity(pos);
         if (!player.getStackInHand(hand).isEmpty()) {
             if (blockEntity.getStack(0).isEmpty()) {
                 world.playSound(null, pos, SoundEvents.ITEM_BOOK_PUT, SoundCategory.BLOCKS, 1.0f, nextFloat(1.0f, 2.0f));
                 // Put the stack the player is holding into the inventory
                 blockEntity.setStack(0, player.getStackInHand(hand).copy());
+
+                Darklight.LOGGER.info("\n"+"\n"+"\n"+"\nStack set to 2: " + player.getStackInHand(hand).copy() + "\nFor: " + world.getBlockEntity(pos)+"\n"+"\n"+"\n");
 
                 // Remove the stack from the player's hand
                 player.getStackInHand(hand).setCount(0);
