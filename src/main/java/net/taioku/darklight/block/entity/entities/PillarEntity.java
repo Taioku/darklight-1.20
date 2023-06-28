@@ -28,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.entity.util.ImplementedInventory;
 import net.taioku.darklight.networking.ModPackets;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -90,6 +91,17 @@ public class PillarEntity extends BlockEntity implements GeoBlockEntity, Impleme
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
     }
 
     @Override
