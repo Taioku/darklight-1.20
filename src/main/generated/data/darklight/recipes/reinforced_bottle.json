@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "darklight:reinforced_leather"
+    }
+  },
+  "pattern": [
+    " L ",
+    "IBI",
+    "   "
+  ],
+  "result": {
+    "item": "darklight:reinforced_bottle"
+  },
+  "show_notification": true
+}

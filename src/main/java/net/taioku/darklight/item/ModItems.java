@@ -28,6 +28,10 @@ public class ModItems {
             new PillarItem(ModBlocks.PILLAR, new FabricItemSettings()));
     public static final Item JAR = registerItem("jar",
             new JarItem(ModBlocks.JAR, new FabricItemSettings()));
+    public static final Item H_TRANSMUTATION_ARM = registerItem("h_transmutation_arm",
+            new HTransmutationArmItem(ModBlocks.H_TRANSMUTATION_ARM, new FabricItemSettings()));
+    public static final Item D_TRANSMUTATION_ARM = registerItem("d_transmutation_arm",
+            new DTransmutationArmItem(ModBlocks.D_TRANSMUTATION_ARM, new FabricItemSettings()));
 
 
     public static final Item REINFORCED_LEATHER = registerItem("reinforced_leather",
@@ -62,6 +66,8 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, RESEARCH_TABLE);
         addToItemGroup(ModItemGroup.DARKLIGHT, PILLAR);
         addToItemGroup(ModItemGroup.DARKLIGHT, JAR);
+        addToItemGroup(ModItemGroup.DARKLIGHT, H_TRANSMUTATION_ARM);
+        addToItemGroup(ModItemGroup.DARKLIGHT, D_TRANSMUTATION_ARM);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_BOTTLE);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_LEATHER);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_BOTTLE);

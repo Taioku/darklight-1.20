@@ -43,6 +43,6 @@ public class Darklight implements ModInitializer {
 
 		ModRecipes.registerRecipes();
 
-		//ModPackets.registerS2CPackets(); // Comment this for dataGen
+		ModPackets.registerS2CPackets(); // Comment this for dataGen
 	}
 }

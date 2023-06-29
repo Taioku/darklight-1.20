@@ -40,6 +40,8 @@ public class ModBlocks {
 
     public static final Block H_TRANSMUTATION_ARM = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "h_transmutation_arm"),
             new ModHTransmutationArmBlock(AbstractBlock.Settings.create()));
+    public static final Block D_TRANSMUTATION_ARM = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "d_transmutation_arm"),
+            new ModDTransmutationArmBlock(AbstractBlock.Settings.create()));
 
     // -------------------------------------------------- SHINE --------------------------------------------------
 
@@ -108,9 +110,6 @@ public class ModBlocks {
 
 
     // -------------------------------------------------- DARK --------------------------------------------------
-
-
-
     // -------------------------------------------------- DARK --------------------------------------------------
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group) {

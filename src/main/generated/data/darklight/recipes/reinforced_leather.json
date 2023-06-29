@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "SIS",
+    "SLS",
+    "SIS"
+  ],
+  "result": {
+    "item": "darklight:reinforced_leather"
+  },
+  "show_notification": true
+}
