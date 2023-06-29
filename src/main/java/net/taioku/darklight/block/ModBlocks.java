@@ -33,15 +33,15 @@ public class ModBlocks {
             new ModResearchTableBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool()));
 
     public static final Block PILLAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "pillar"),
-            new ModPillarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE
-            )));
+            new ModPillarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE)));
+
     public static final Block JAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "jar"),
             new ModJarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block H_TRANSMUTATION_ARM = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "h_transmutation_arm"),
-            new ModHTransmutationArmBlock(AbstractBlock.Settings.create()));
+            new ModHTransmutationArmBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE)));
     public static final Block D_TRANSMUTATION_ARM = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "d_transmutation_arm"),
-            new ModDTransmutationArmBlock(AbstractBlock.Settings.create()));
+            new ModDTransmutationArmBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE)));
 
     // -------------------------------------------------- SHINE --------------------------------------------------
 

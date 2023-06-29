@@ -62,7 +62,7 @@ public class DTransmutationArmItem extends BlockItem implements GeoItem{
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.HOLD_ON_LAST_FRAME));
-        return PlayState.CONTINUE;
+        return PlayState.STOP;
     }
 
     @Override
