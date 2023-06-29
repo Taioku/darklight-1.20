@@ -1,11 +1,14 @@
 package net.taioku.darklight.block.entity.client;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.taioku.darklight.block.entity.entities.PillarBlockEntity;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
@@ -40,7 +43,11 @@ public class PillarBlockRenderer extends GeoBlockRenderer<PillarBlockEntity> {
             protected void renderStackForBone(MatrixStack poseStack, GeoBone bone, ItemStack stack, PillarBlockEntity animatable,
                                               VertexConsumerProvider bufferSource, float partialTick, int packedLight, int packedOverlay) {
                 if (stack == itemStack) {
-                    poseStack.translate(0.0f, 1.0f, 0.0f);
+                    if (stack.getItem() instanceof BlockItem) {
+                        poseStack.translate(0.0f, 1.0f, 0.0f);
+                    } else {
+                        poseStack.translate(0.0f, 1.2f, 0.0f);
+                    }
                 }
                 super.renderStackForBone(poseStack, bone, stack, animatable, bufferSource, partialTick, packedLight, packedOverlay);
             }
