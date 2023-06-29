@@ -7,16 +7,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
-import net.taioku.darklight.block.entity.entities.JarBlockEntity;
-import net.taioku.darklight.block.entity.entities.MortarBlockEntity;
-import net.taioku.darklight.block.entity.entities.PillarBlockEntity;
-import net.taioku.darklight.block.entity.entities.ResearchTableBlockEntity;
+import net.taioku.darklight.block.entity.entities.*;
 
 public class ModBlockEntities {
     public static BlockEntityType<MortarBlockEntity> MORTAR_ENTITY;
     public static BlockEntityType<ResearchTableBlockEntity> RESEARCH_TABLE_ENTITY;
     public static BlockEntityType<PillarBlockEntity> PILLAR_ENTITY;
     public static BlockEntityType<JarBlockEntity> JAR_ENTITY;
+    public static BlockEntityType<HTransmutationArmBlockEntity> H_TRANSMUTATION_ARM_ENTITY;
 
     public static void registerAllBlockEntities() {
         MORTAR_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
@@ -38,5 +36,10 @@ public class ModBlockEntities {
                 new Identifier(Darklight.MOD_ID, "jar_entity"),
                 FabricBlockEntityTypeBuilder.create(JarBlockEntity::new,
                         ModBlocks.JAR).build());
+
+        H_TRANSMUTATION_ARM_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Darklight.MOD_ID, "h_transmutation_arm_entity"),
+                FabricBlockEntityTypeBuilder.create(HTransmutationArmBlockEntity::new,
+                        ModBlocks.H_TRANSMUTATION_ARM).build());
     }
 }

@@ -77,6 +77,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModFluids.SHINE_WATER_BUCKET, Models.GENERATED);
         itemModelGenerator.register(ModItems.REINFORCED_BOTTLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_LEATHER, Models.GENERATED);
         itemModelGenerator.register(ModItems.SHINE_BOTTLE, Models.GENERATED);
     }
 }

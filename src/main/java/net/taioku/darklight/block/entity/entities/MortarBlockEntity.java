@@ -34,6 +34,8 @@ import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.Optional;
 
+import static org.apache.commons.lang3.RandomUtils.nextFloat;
+
 public class MortarBlockEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
@@ -165,10 +167,10 @@ public class MortarBlockEntity extends BlockEntity implements GeoBlockEntity, Na
             entity.getWorld().playSound(
                     null,
                     entity.pos,
-                    SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
+                    SoundEvents.BLOCK_BEACON_POWER_SELECT,
                     SoundCategory.BLOCKS,
                     0.5f,
-                    2f);
+                    nextFloat(1.0f, 1.5f));
 
             entity.resetProgress();
         }

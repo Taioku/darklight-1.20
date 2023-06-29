@@ -38,6 +38,9 @@ public class ModBlocks {
     public static final Block JAR = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "jar"),
             new ModJarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
+    public static final Block H_TRANSMUTATION_ARM = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "h_transmutation_arm"),
+            new ModHTransmutationArmBlock(AbstractBlock.Settings.create()));
+
     // -------------------------------------------------- SHINE --------------------------------------------------
 
     public static final Block SHINE_LOG = registerBlock("shine_log",
