@@ -1,4 +1,4 @@
-package net.taioku.darklight.block.entity.entities;
+package net.taioku.darklight.block.entity.tile;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -11,20 +11,20 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
-public class DTransmutationArmBlockEntity extends BlockEntity implements GeoBlockEntity {
+public class JarBlockEntity extends BlockEntity implements GeoBlockEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public DTransmutationArmBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.D_TRANSMUTATION_ARM_ENTITY, pos, state);
+    public JarBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.JAR_ENTITY, pos, state);
     }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this,"d_transmutation_arm_controller",0,this::predicate));
+        controllerRegistrar.add(new AnimationController<>(this,"jar_controller",0,this::predicate));
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.PLAY_ONCE));
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

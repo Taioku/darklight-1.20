@@ -24,7 +24,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.taioku.darklight.block.entity.entities.PillarBlockEntity;
+import net.taioku.darklight.block.entity.tile.PillarBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 import static org.apache.commons.lang3.RandomUtils.nextFloat;

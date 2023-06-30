@@ -24,7 +24,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.taioku.darklight.block.entity.ModBlockEntities;
-import net.taioku.darklight.block.entity.entities.MortarBlockEntity;
+import net.taioku.darklight.block.entity.tile.MortarBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -65,7 +65,7 @@ public class ModMortarBlock extends BlockWithEntity implements BlockEntityProvid
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState()
-                .with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite())
+                .with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing())
                 .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
     }
 

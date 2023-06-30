@@ -43,6 +43,9 @@ public class ModBlocks {
     public static final Block D_TRANSMUTATION_ARM = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "d_transmutation_arm"),
             new ModDTransmutationArmBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE)));
 
+    public static final Block REINFORCED_CRAFTING_TABLE = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "reinforced_crafting_table"),
+            new ModReinforcedCraftingTableBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool().sounds(BlockSoundGroup.CHERRY_WOOD)));
+
     // -------------------------------------------------- SHINE --------------------------------------------------
 
     public static final Block SHINE_LOG = registerBlock("shine_log",

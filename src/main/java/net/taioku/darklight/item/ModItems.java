@@ -32,6 +32,8 @@ public class ModItems {
             new HTransmutationArmItem(ModBlocks.H_TRANSMUTATION_ARM, new FabricItemSettings()));
     public static final Item D_TRANSMUTATION_ARM = registerItem("d_transmutation_arm",
             new DTransmutationArmItem(ModBlocks.D_TRANSMUTATION_ARM, new FabricItemSettings()));
+    public static final Item REINFORCED_CRAFTING_TABLE = registerItem("reinforced_crafting_table",
+            new ReinforcedCraftingTableItem(ModBlocks.REINFORCED_CRAFTING_TABLE, new FabricItemSettings()));
 
 
     public static final Item REINFORCED_LEATHER = registerItem("reinforced_leather",
@@ -39,6 +41,8 @@ public class ModItems {
     public static final Item REINFORCED_BOTTLE = registerItem("reinforced_bottle",
             new ReinforcedBottleItem(new FabricItemSettings()));
     public static final Item SHINE_BOTTLE = registerItem("shine_bottle",
+            new Item(new FabricItemSettings().maxCount(16)));
+    public static final Item SHINE_DUST = registerItem("shine_dust",
             new Item(new FabricItemSettings().maxCount(16)));
 
     public static final Item THUN_HELMET = registerItem("thun_helmet",
@@ -68,7 +72,9 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, JAR);
         addToItemGroup(ModItemGroup.DARKLIGHT, H_TRANSMUTATION_ARM);
         addToItemGroup(ModItemGroup.DARKLIGHT, D_TRANSMUTATION_ARM);
+        addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_CRAFTING_TABLE);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_BOTTLE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_DUST);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_LEATHER);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_BOTTLE);
 

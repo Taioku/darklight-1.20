@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:deepslate"
+    },
+    "P": {
+      "item": "minecraft:stripped_oak_log"
+    },
+    "R": {
+      "item": "darklight:reinforced_leather"
+    }
+  },
+  "pattern": [
+    " R ",
+    "PPP",
+    "DDD"
+  ],
+  "result": {
+    "item": "darklight:reinforced_crafting_table"
+  },
+  "show_notification": true
+}

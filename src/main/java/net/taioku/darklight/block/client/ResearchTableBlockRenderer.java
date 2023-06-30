@@ -1,4 +1,4 @@
-package net.taioku.darklight.block.entity.client;
+package net.taioku.darklight.block.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.enums.TablePart;
@@ -9,7 +9,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.custom.ModResearchTableBlock;
-import net.taioku.darklight.block.entity.entities.ResearchTableBlockEntity;
+import net.taioku.darklight.block.entity.tile.ResearchTableBlockEntity;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
 public class ResearchTableBlockRenderer extends GeoBlockRenderer<ResearchTableBlockEntity> {

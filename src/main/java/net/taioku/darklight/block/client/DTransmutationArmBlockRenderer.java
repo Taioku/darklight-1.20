@@ -1,4 +1,4 @@
-package net.taioku.darklight.block.entity.client;
+package net.taioku.darklight.block.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.enums.ArmPart;
@@ -9,8 +9,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.custom.ModDTransmutationArmBlock;
-import net.taioku.darklight.block.custom.ModHTransmutationArmBlock;
-import net.taioku.darklight.block.entity.entities.DTransmutationArmBlockEntity;
+import net.taioku.darklight.block.entity.tile.DTransmutationArmBlockEntity;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
 public class DTransmutationArmBlockRenderer extends GeoBlockRenderer<DTransmutationArmBlockEntity> {

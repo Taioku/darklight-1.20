@@ -1,4 +1,4 @@
-package net.taioku.darklight.block.entity.entities;
+package net.taioku.darklight.block.entity.tile;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -69,8 +69,6 @@ public class MortarBlockEntity extends BlockEntity implements GeoBlockEntity, Na
         };
     }
 
-
-
     /* ---------------------- BLOCK RENDER ---------------------- */
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
@@ -93,7 +91,7 @@ public class MortarBlockEntity extends BlockEntity implements GeoBlockEntity, Na
     }
     /* ---------------------- BLOCK RENDER ---------------------- */
 
-     /* ---------------------- BLOCK ENTITY ---------------------- */
+    /* ---------------------- BLOCK ENTITY ---------------------- */
     @Override
     public DefaultedList<ItemStack> getItems() {
         return this.inventory;
@@ -197,4 +195,5 @@ public class MortarBlockEntity extends BlockEntity implements GeoBlockEntity, Na
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
         return inventory.getStack(5).getMaxCount() > inventory.getStack(5).getCount();
     }
+    /* ---------------------- BLOCK ENTITY ---------------------- */
 }

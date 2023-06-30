@@ -1,11 +1,18 @@
 package net.taioku.darklight.data;
 
+import com.mojang.datafixers.types.templates.Tag;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.WoodType;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.TagEntry;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.item.ModItems;
@@ -85,5 +92,16 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
                         FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.REINFORCED_LEATHER)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.REINFORCED_CRAFTING_TABLE)
+                .pattern(" R ")
+                .pattern("PPP")
+                .pattern("DDD")
+                .input('R', ModItems.REINFORCED_LEATHER)
+                .input('P', Blocks.STRIPPED_OAK_LOG)
+                .input('D', Items.DEEPSLATE)
+                .criterion(FabricRecipeProvider.hasItem(ModItems.REINFORCED_LEATHER),
+                        FabricRecipeProvider.conditionsFromItem(ModItems.REINFORCED_LEATHER))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.REINFORCED_CRAFTING_TABLE)));
     }
 }

@@ -1,4 +1,4 @@
-package net.taioku.darklight.block.entity.entities;
+package net.taioku.darklight.block.entity.tile;
 
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;

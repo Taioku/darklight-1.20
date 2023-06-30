@@ -1,8 +1,8 @@
-package net.taioku.darklight.block.entity.client;
+package net.taioku.darklight.block.client;
 
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
-import net.taioku.darklight.block.entity.entities.DTransmutationArmBlockEntity;
+import net.taioku.darklight.block.entity.tile.DTransmutationArmBlockEntity;
 import software.bernie.geckolib.model.GeoModel;
 
 public class DTransmutationArmBlockModel extends GeoModel<DTransmutationArmBlockEntity> {

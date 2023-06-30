@@ -3,8 +3,7 @@ package net.taioku.darklight.block.custom;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
-import net.taioku.darklight.block.entity.entities.DTransmutationArmBlockEntity;
-import net.taioku.darklight.block.entity.entities.HTransmutationArmBlockEntity;
+import net.taioku.darklight.block.entity.tile.DTransmutationArmBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class ModDTransmutationArmBlock extends ModArmBlock {
