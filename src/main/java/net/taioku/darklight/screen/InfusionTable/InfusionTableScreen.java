@@ -1,4 +1,4 @@
-package net.taioku.darklight.screen.ReinforcedCraftingTable;
+package net.taioku.darklight.screen.InfusionTable;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DrawContext;
@@ -9,14 +9,14 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 
-public class ReinforcedCraftingTableScreen extends HandledScreen<ReinforcedCraftingTableScreenHandler> {
-    int customBgWidth = 188;
+public class InfusionTableScreen extends HandledScreen<InfusionTableScreenHandler> {
+    int customBgWidth = 187;
     int customBgHeight = 218;
 
     private static final Identifier TEXTURE =
-            new Identifier(Darklight.MOD_ID, "textures/gui/reinforced_crafting_table_gui.png");
+            new Identifier(Darklight.MOD_ID, "textures/gui/infusion_table.png");
 
-    public ReinforcedCraftingTableScreen(ReinforcedCraftingTableScreenHandler handler, PlayerInventory inventory, Text title) {
+    public InfusionTableScreen(InfusionTableScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 
@@ -24,9 +24,9 @@ public class ReinforcedCraftingTableScreen extends HandledScreen<ReinforcedCraft
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.enableBlend();
         int x = (width - customBgWidth) / 2;
         int y = (height - customBgHeight) / 2;
-        RenderSystem.enableBlend();
         context.drawTexture(TEXTURE, x, y, 0, 0, customBgWidth, customBgHeight);
     }
 

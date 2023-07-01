@@ -1,4 +1,4 @@
-package net.taioku.darklight.screen.ReinforcedCraftingTable;
+package net.taioku.darklight.screen.InfusionTable;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -7,34 +7,38 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.screen.slot.SlotActionType;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.screen.ModScreenHandlers;
 
-public class ReinforcedCraftingTableScreenHandler extends ScreenHandler {
+public class InfusionTableScreenHandler extends ScreenHandler {
     private final Inventory inventory;
 
-    public ReinforcedCraftingTableScreenHandler(int syncId, PlayerInventory inventory) {
+    public InfusionTableScreenHandler(int syncId, PlayerInventory inventory) {
         this(syncId, inventory, new SimpleInventory(9));
     }
 
-    public ReinforcedCraftingTableScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(ModScreenHandlers.REINFORCED_CRAFTING_RABLE_SCREEN_HANDLER, syncId);
+    public InfusionTableScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+        super(ModScreenHandlers.INFUSION_TABLE, syncId);
         checkSize(inventory, 9);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
 
-        this.addSlot(new Slot(inventory, 0, 59,4));
-        this.addSlot(new Slot(inventory, 1, 80,4));
-        this.addSlot(new Slot(inventory, 2, 101,4));
-        this.addSlot(new Slot(inventory, 3, 59,25));
-        this.addSlot(new Slot(inventory, 4, 80,25));
-        this.addSlot(new Slot(inventory, 5, 101,25));
-        this.addSlot(new Slot(inventory, 6, 59,46));
-        this.addSlot(new Slot(inventory, 7, 80,46));
-        this.addSlot(new Slot(inventory, 8, 101,46));
+        for (int i = 0; i < 3; ++i) {
+            for (int l = 0; l < 3; ++l) {
+                this.addSlot(new Slot(inventory, l + i * 3, 58 + l * 21, 4 + i * 21));
+            }
+        }
 
-        addPlayerInventory(playerInventory);
-        addPlayerHotbar(playerInventory);
+        for (int i = 0; i < 3; ++i) {
+            for (int l = 0; l < 9; ++l) {
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 7 + l * 18, 92 + i * 18)); // y: 106
+            }
+        }
+
+        for (int i = 0; i < 9; ++i) {
+            this.addSlot(new Slot(playerInventory, i, 7 + i * 18, 150)); // y: 164
+        }
     }
 
     @Override
@@ -67,17 +71,10 @@ public class ReinforcedCraftingTableScreenHandler extends ScreenHandler {
         return this.inventory.canPlayerUse(player);
     }
 
-    private void addPlayerInventory(PlayerInventory playerInventory) {
-        for (int i = 0; i < 3; ++i) {
-            for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 106 + i * 18));
-            }
-        }
-    }
-
-    private void addPlayerHotbar(PlayerInventory playerInventory) {
-        for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 164));
-        }
+    @Override
+    public void onSlotClick(int slotIndex, int button, SlotActionType actionType, PlayerEntity player) {
+        super.onSlotClick(slotIndex, button, actionType, player);
+        Darklight.LOGGER.info("slot: " + slotIndex +
+                "\naction Type" + actionType);
     }
 }

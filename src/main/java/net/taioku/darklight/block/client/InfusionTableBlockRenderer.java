@@ -1,8 +1,5 @@
 package net.taioku.darklight.block.client;
 
-import net.minecraft.block.AirBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
@@ -12,18 +9,14 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
-import net.taioku.darklight.block.custom.ModReinforcedCraftingTableBlock;
-import net.taioku.darklight.block.entity.tile.PillarBlockEntity;
-import net.taioku.darklight.block.entity.tile.ReinforcedCraftingTableBlockEntity;
+import net.taioku.darklight.block.entity.tile.InfusionTableBlockEntity;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.cache.object.GeoBone;
-import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 import software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer;
 
-public class ReinforcedCraftingTableBlockRenderer extends GeoBlockRenderer<ReinforcedCraftingTableBlockEntity> {
+public class InfusionTableBlockRenderer extends GeoBlockRenderer<InfusionTableBlockEntity> {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     ItemStack item0;
     ItemStack item1;
@@ -35,12 +28,12 @@ public class ReinforcedCraftingTableBlockRenderer extends GeoBlockRenderer<Reinf
     ItemStack item7;
     ItemStack item8;
 
-    public ReinforcedCraftingTableBlockRenderer(BlockEntityRendererFactory.Context context) {
-        super(new ReinforcedCraftingTableBlockModel());
+    public InfusionTableBlockRenderer(BlockEntityRendererFactory.Context context) {
+        super(new InfusionTableBlockModel());
 
         addRenderLayer(new BlockAndItemGeoLayer<>(this) {
             @Override
-            protected ItemStack getStackForBone(GeoBone bone, ReinforcedCraftingTableBlockEntity animatable) {
+            protected ItemStack getStackForBone(GeoBone bone, InfusionTableBlockEntity animatable) {
                 return switch (bone.getName()) {
                     case "item0" -> item0;
                     case "item1" -> item1;
@@ -56,12 +49,12 @@ public class ReinforcedCraftingTableBlockRenderer extends GeoBlockRenderer<Reinf
             }
 
             @Override
-            protected ModelTransformationMode getTransformTypeForStack(GeoBone bone, ItemStack stack, ReinforcedCraftingTableBlockEntity animatable) {
+            protected ModelTransformationMode getTransformTypeForStack(GeoBone bone, ItemStack stack, InfusionTableBlockEntity animatable) {
                 return ModelTransformationMode.GROUND;
             }
 
             @Override
-            protected void renderStackForBone(MatrixStack poseStack, GeoBone bone, ItemStack stack, ReinforcedCraftingTableBlockEntity animatable,
+            protected void renderStackForBone(MatrixStack poseStack, GeoBone bone, ItemStack stack, InfusionTableBlockEntity animatable,
                                               VertexConsumerProvider bufferSource, float partialTick, int packedLight, int packedOverlay) {
                 if (stack.getItem() instanceof BlockItem) {
                     poseStack.scale(0.5f, 0.5f, 0.5f);
@@ -102,7 +95,7 @@ public class ReinforcedCraftingTableBlockRenderer extends GeoBlockRenderer<Reinf
     }
 
     @Override
-    public void preRender(MatrixStack poseStack, ReinforcedCraftingTableBlockEntity animatable, BakedGeoModel model, VertexConsumerProvider bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void preRender(MatrixStack poseStack, InfusionTableBlockEntity animatable, BakedGeoModel model, VertexConsumerProvider bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
         item0 = animatable.getRenderStack(0);
         item1 = animatable.getRenderStack(1);

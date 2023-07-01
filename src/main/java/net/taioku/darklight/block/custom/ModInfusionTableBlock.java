@@ -2,8 +2,6 @@ package net.taioku.darklight.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -17,13 +15,13 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.taioku.darklight.block.entity.tile.ReinforcedCraftingTableBlockEntity;
+import net.taioku.darklight.block.entity.tile.InfusionTableBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class ModReinforcedCraftingTableBlock extends BlockWithEntity {
+public class ModInfusionTableBlock extends BlockWithEntity {
     public static final DirectionProperty HORIZONTAL_FACING = Properties.HORIZONTAL_FACING;
 
-    public ModReinforcedCraftingTableBlock(Settings settings) {
+    public ModInfusionTableBlock(Settings settings) {
         super(settings
                 .nonOpaque());
         setDefaultState(getDefaultState()
@@ -46,8 +44,8 @@ public class ModReinforcedCraftingTableBlock extends BlockWithEntity {
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof ReinforcedCraftingTableBlockEntity) {
-                ItemScatterer.spawn(world, pos, (ReinforcedCraftingTableBlockEntity)blockEntity);
+            if (blockEntity instanceof InfusionTableBlockEntity) {
+                ItemScatterer.spawn(world, pos, (InfusionTableBlockEntity)blockEntity);
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -70,7 +68,7 @@ public class ModReinforcedCraftingTableBlock extends BlockWithEntity {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new ReinforcedCraftingTableBlockEntity(pos, state);
+        return new InfusionTableBlockEntity(pos, state);
     }
 
     @Override

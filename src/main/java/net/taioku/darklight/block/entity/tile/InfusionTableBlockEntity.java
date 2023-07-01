@@ -22,11 +22,10 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.entity.util.ImplementedInventory;
 import net.taioku.darklight.networking.ModPackets;
-import net.taioku.darklight.screen.ReinforcedCraftingTable.ReinforcedCraftingTableScreenHandler;
+import net.taioku.darklight.screen.InfusionTable.InfusionTableScreenHandler;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -35,12 +34,12 @@ import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInst
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
-public class ReinforcedCraftingTableBlockEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
+public class InfusionTableBlockEntity extends BlockEntity implements GeoBlockEntity, NamedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public ReinforcedCraftingTableBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.REINFORCED_CRAFTING_TABLE, pos, state);
+    public InfusionTableBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.INFUSION_TABLE, pos, state);
     }
 
 
@@ -58,7 +57,7 @@ public class ReinforcedCraftingTableBlockEntity extends BlockEntity implements G
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this,"reinforced_crafting_table_controller",0, this::predicate));
+        controllerRegistrar.add(new AnimationController<>(this,"infusion_table_controller",0, this::predicate));
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
@@ -83,7 +82,7 @@ public class ReinforcedCraftingTableBlockEntity extends BlockEntity implements G
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new ReinforcedCraftingTableScreenHandler(syncId, playerInventory, this);
+        return new InfusionTableScreenHandler(syncId, playerInventory, this);
     }
 
     public void setInventory(DefaultedList<ItemStack> inventory) {

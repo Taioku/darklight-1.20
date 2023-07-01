@@ -7,8 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.taioku.darklight.block.entity.tile.InfusionTableBlockEntity;
 import net.taioku.darklight.block.entity.tile.PillarBlockEntity;
-import net.taioku.darklight.block.entity.tile.ReinforcedCraftingTableBlockEntity;
 
 public class ItemStackSyncS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler,
@@ -22,7 +22,7 @@ public class ItemStackSyncS2CPacket {
 
         if (client.world.getBlockEntity(position) instanceof PillarBlockEntity blockEntity) {
             blockEntity.setInventory(list);
-        } else if (client.world.getBlockEntity(position) instanceof ReinforcedCraftingTableBlockEntity blockEntity) {
+        } else if (client.world.getBlockEntity(position) instanceof InfusionTableBlockEntity blockEntity) {
             blockEntity.setInventory(list);
         }
     }

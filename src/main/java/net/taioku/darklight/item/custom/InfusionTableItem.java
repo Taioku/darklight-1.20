@@ -9,8 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.taioku.darklight.item.client.JarItemRenderer;
-import net.taioku.darklight.item.client.ReinforcedCraftingTableItemRenderer;
+import net.taioku.darklight.item.client.InfusionTableItemRenderer;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.RenderProvider;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -23,23 +22,23 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ReinforcedCraftingTableItem extends BlockItem implements GeoItem {
+public class InfusionTableItem extends BlockItem implements GeoItem {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
 
-    public ReinforcedCraftingTableItem(Block block, Settings settings) {
+    public InfusionTableItem(Block block, Settings settings) {
         super(block, settings);
     }
 
     @Override
     public void createRenderer(Consumer<Object> consumer) {
         consumer.accept(new RenderProvider() {
-            private ReinforcedCraftingTableItemRenderer renderer;
+            private InfusionTableItemRenderer renderer;
 
             @Override
             public BuiltinModelItemRenderer getCustomRenderer() {
                 if (this.renderer == null)
-                    this.renderer = new ReinforcedCraftingTableItemRenderer();
+                    this.renderer = new InfusionTableItemRenderer();
 
                 return this.renderer;
             }
@@ -53,7 +52,7 @@ public class ReinforcedCraftingTableItem extends BlockItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this,"reinforced_crafting_table_controller",0,this::predicate));
+        controllerRegistrar.add(new AnimationController<>(this,"infusion_table_controller",0,this::predicate));
 
     }
 
@@ -64,12 +63,12 @@ public class ReinforcedCraftingTableItem extends BlockItem implements GeoItem {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("darklight.item.custom.reinforced_crafting_table.tooltip"));
+        tooltip.add(Text.translatable("darklight.item.custom.infusion_table.tooltip"));
         if (Screen.hasAltDown()) {
-            tooltip.add(Text.translatable("darklight.item.custom.reinforced_crafting_table.alt_tooltip"));
+            tooltip.add(Text.translatable("darklight.item.custom.infusion_table.alt_tooltip"));
         }
         else {
-            tooltip.add(Text.translatable("darklight.item.custom.reinforced_crafting_table.!alt_tooltip").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.translatable("darklight.item.custom.infusion_table.!alt_tooltip").formatted(Formatting.DARK_GRAY));
         }
     }
 

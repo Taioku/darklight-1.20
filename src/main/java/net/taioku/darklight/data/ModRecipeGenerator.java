@@ -93,7 +93,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.REINFORCED_LEATHER)));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.REINFORCED_CRAFTING_TABLE)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.INFUSION_TABLE)
                 .pattern(" R ")
                 .pattern("PPP")
                 .pattern("DDD")
@@ -102,6 +102,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('D', Items.DEEPSLATE)
                 .criterion(FabricRecipeProvider.hasItem(ModItems.REINFORCED_LEATHER),
                         FabricRecipeProvider.conditionsFromItem(ModItems.REINFORCED_LEATHER))
-                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.REINFORCED_CRAFTING_TABLE)));
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.INFUSION_TABLE)));
     }
 }
