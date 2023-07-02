@@ -46,6 +46,9 @@ public class ModBlocks {
     public static final Block INFUSION_TABLE = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "infusion_table"),
             new ModInfusionTableBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool().sounds(BlockSoundGroup.CHERRY_WOOD)));
 
+    public static final Block STEAM_TREATER = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "steam_treater"),
+            new ModSteamTreaterBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool().sounds(BlockSoundGroup.ANVIL)));
+
     // -------------------------------------------------- SHINE --------------------------------------------------
 
     public static final Block SHINE_LOG = registerBlock("shine_log",

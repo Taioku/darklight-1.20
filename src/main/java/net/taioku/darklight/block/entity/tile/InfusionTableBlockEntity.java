@@ -39,7 +39,7 @@ public class InfusionTableBlockEntity extends BlockEntity implements GeoBlockEnt
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public InfusionTableBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.INFUSION_TABLE, pos, state);
+        super(ModBlockEntities.INFUSION_TABLE_ENTITY, pos, state);
     }
 
 

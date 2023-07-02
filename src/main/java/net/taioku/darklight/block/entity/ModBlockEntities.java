@@ -16,7 +16,8 @@ public class ModBlockEntities {
     public static BlockEntityType<JarBlockEntity> JAR_ENTITY;
     public static BlockEntityType<HTransmutationArmBlockEntity> H_TRANSMUTATION_ARM_ENTITY;
     public static BlockEntityType<DTransmutationArmBlockEntity> D_TRANSMUTATION_ARM_ENTITY;
-    public static BlockEntityType<InfusionTableBlockEntity> INFUSION_TABLE;
+    public static BlockEntityType<InfusionTableBlockEntity> INFUSION_TABLE_ENTITY;
+    public static BlockEntityType<SteamTreaterBlockEntity> STEAM_TREATER_ENTITY;
 
     public static void registerAllBlockEntities() {
         MORTAR_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
@@ -49,9 +50,14 @@ public class ModBlockEntities {
                 FabricBlockEntityTypeBuilder.create(DTransmutationArmBlockEntity::new,
                         ModBlocks.D_TRANSMUTATION_ARM).build());
 
-        INFUSION_TABLE = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+        INFUSION_TABLE_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(Darklight.MOD_ID, "infusion_table"),
                 FabricBlockEntityTypeBuilder.create(InfusionTableBlockEntity::new,
                         ModBlocks.INFUSION_TABLE).build());
+
+        STEAM_TREATER_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Darklight.MOD_ID, "steam_treater"),
+                FabricBlockEntityTypeBuilder.create(SteamTreaterBlockEntity::new,
+                        ModBlocks.STEAM_TREATER).build());
     }
 }

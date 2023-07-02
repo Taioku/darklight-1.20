@@ -34,6 +34,8 @@ public class ModItems {
             new DTransmutationArmItem(ModBlocks.D_TRANSMUTATION_ARM, new FabricItemSettings()));
     public static final Item INFUSION_TABLE = registerItem("infusion_table",
             new InfusionTableItem(ModBlocks.INFUSION_TABLE, new FabricItemSettings()));
+    public static final Item STEAM_TREATER = registerItem("steam_treater",
+            new SteamTreaterItem(ModBlocks.STEAM_TREATER, new FabricItemSettings()));
 
 
     public static final Item REINFORCED_LEATHER = registerItem("reinforced_leather",
@@ -73,6 +75,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, H_TRANSMUTATION_ARM);
         addToItemGroup(ModItemGroup.DARKLIGHT, D_TRANSMUTATION_ARM);
         addToItemGroup(ModItemGroup.DARKLIGHT, INFUSION_TABLE);
+        addToItemGroup(ModItemGroup.DARKLIGHT, STEAM_TREATER);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_BOTTLE);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_DUST);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_LEATHER);

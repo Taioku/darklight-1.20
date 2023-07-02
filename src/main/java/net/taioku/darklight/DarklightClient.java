@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.client.*;
+import net.taioku.darklight.block.entity.tile.SteamTreaterBlockEntity;
 import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.screen.ModScreenHandlers;
 import net.taioku.darklight.screen.InfusionTable.InfusionTableScreen;
@@ -47,6 +48,7 @@ public class DarklightClient implements ClientModInitializer {
 		BlockEntityRendererFactories.register(ModBlockEntities.PILLAR_ENTITY, PillarBlockRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.H_TRANSMUTATION_ARM_ENTITY, HTransmutationArmBlockRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.D_TRANSMUTATION_ARM_ENTITY, DTransmutationArmBlockRenderer::new);
-		BlockEntityRendererFactories.register(ModBlockEntities.INFUSION_TABLE, InfusionTableBlockRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.INFUSION_TABLE_ENTITY, InfusionTableBlockRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.STEAM_TREATER_ENTITY, SteamTreaterBlockRenderer::new);
 	}
 }
