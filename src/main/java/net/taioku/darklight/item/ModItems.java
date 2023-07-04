@@ -20,6 +20,9 @@ public class ModItems {
     public static final Item THUN_INGOT = registerItem("thun_ingot",
             new ThunIngot(new FabricItemSettings()));
 
+    public static final Item KALEIDOSCOPE = registerItem("kaleidoscope",
+            new KaleidoscopeItem(new FabricItemSettings()));
+
     public static final Item MORTAR = registerItem("mortar",
             new MortarItem(ModBlocks.MORTAR, new FabricItemSettings()));
     public static final Item RESEARCH_TABLE = registerItem("research_table",
@@ -36,7 +39,6 @@ public class ModItems {
             new InfusionTableItem(ModBlocks.INFUSION_TABLE, new FabricItemSettings()));
     public static final Item STEAM_TREATER = registerItem("steam_treater",
             new SteamTreaterItem(ModBlocks.STEAM_TREATER, new FabricItemSettings()));
-
 
     public static final Item REINFORCED_LEATHER = registerItem("reinforced_leather",
             new Item(new FabricItemSettings()));
@@ -66,6 +68,8 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static void addItemsToItemGroup() {
+        addToItemGroup(ModItemGroup.DARKLIGHT, KALEIDOSCOPE);
+
         addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);
         addToItemGroup(ModItemGroup.DARKLIGHT, MORTAR);
