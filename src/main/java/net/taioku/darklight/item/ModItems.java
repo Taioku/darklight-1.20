@@ -3,6 +3,7 @@ package net.taioku.darklight.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
@@ -59,6 +60,10 @@ public class ModItems {
             new ThunArmorItem(ModArmorMaterials.THUN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
 
+    public static final Item DREAMERS_HAT = registerItem("dreamers_hat",
+            new DreamersHatItem(ModArmorMaterials.HAT, ArmorItem.Type.HELMET, new FabricItemSettings()));
+
+
 
     public static final Item TOME = registerItem("tome",
             new Item(new FabricItemSettings()));
@@ -89,6 +94,8 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_CHESTPLATE);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_LEGGINGS);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_BOOTS);
+
+        addToItemGroup(ModItemGroup.DARKLIGHT, DREAMERS_HAT);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, TOME);
         addToItemGroup(ModItemGroup.DARKLIGHT, LOST_PAGE);

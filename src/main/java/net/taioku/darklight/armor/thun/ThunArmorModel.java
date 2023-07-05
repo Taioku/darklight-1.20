@@ -1,4 +1,4 @@
-package net.taioku.darklight.item.client;
+package net.taioku.darklight.armor.thun;
 
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;

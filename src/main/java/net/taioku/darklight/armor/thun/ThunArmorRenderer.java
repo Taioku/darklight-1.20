@@ -1,4 +1,4 @@
-package net.taioku.darklight.item.client;
+package net.taioku.darklight.armor.thun;
 
 import net.taioku.darklight.item.custom.ThunArmorItem;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
