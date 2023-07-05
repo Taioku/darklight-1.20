@@ -6,6 +6,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.math.BlockPos;
 import net.taioku.darklight.Darklight;
+import net.taioku.darklight.block.custom.ModDTransmutationArmBlock;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
@@ -30,7 +31,7 @@ public class DTransmutationArmBlockEntity extends BlockEntity implements GeoBloc
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.PLAY_ONCE));
-        hasAnimationFinished = tAnimationState.getController().hasAnimationFinished();
+        //hasAnimationFinished = tAnimationState.getController().hasAnimationFinished();
         //Darklight.LOGGER.info("\n" + animState);
         if (!hasAnimationFinished) {
             //Darklight.LOGGER.info("\ncont");

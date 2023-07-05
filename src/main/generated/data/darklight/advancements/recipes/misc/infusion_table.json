@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:reinforced_crafting_table"
+        "recipe": "minecraft:infusion_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:reinforced_crafting_table"
+      "minecraft:infusion_table"
     ]
   },
   "sends_telemetry_event": false
