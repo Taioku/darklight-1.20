@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.WoodType;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -15,6 +16,7 @@ import net.minecraft.registry.tag.TagEntry;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.block.ModBlocks;
+import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
 import net.taioku.darklight.recipe.mortar.MortarRecipe;
 
@@ -103,5 +105,18 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModItems.REINFORCED_LEATHER),
                         FabricRecipeProvider.conditionsFromItem(ModItems.REINFORCED_LEATHER))
                 .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModItems.INFUSION_TABLE)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHINE_BARK_PLANKS, 4)
+                .input(ModBlocks.SHINE_LOG)
+                .criterion(FabricRecipeProvider.hasItem(ModBlocks.SHINE_LOG),
+                        FabricRecipeProvider.conditionsFromItem(ModBlocks.SHINE_LOG))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.SHINE_BARK_PLANKS)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHINE_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_SHINE_LOG)
+                .criterion(FabricRecipeProvider.hasItem(ModBlocks.STRIPPED_SHINE_LOG),
+                        FabricRecipeProvider.conditionsFromItem(ModBlocks.STRIPPED_SHINE_LOG))
+                .offerTo(exporter, new Identifier(FabricRecipeProvider.getRecipeName(ModBlocks.SHINE_PLANKS)));
+
     }
 }

@@ -68,6 +68,8 @@ public class ModBlocks {
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)), ModItemGroup.DARKLIGHT);
     public static final Block STRIPPED_SHINE_WOOD = registerBlock("stripped_shine_wood",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)), ModItemGroup.DARKLIGHT);
+    public static final Block SHINE_BARK_PLANKS = registerBlock("shine_bark_planks",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_PLANKS = registerBlock("shine_planks",
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)), ModItemGroup.DARKLIGHT);
     public static final Block SHINE_LEAVES = registerBlock("shine_leaves",

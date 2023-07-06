@@ -61,36 +61,42 @@ public class InfusionTableBlockRenderer extends GeoBlockRenderer<InfusionTableBl
                 if (stack.getItem() instanceof BlockItem) {
                     poseStack.scale(0.5f, 0.5f, 0.5f);
                     switch (bone.getName()) {
-                        case "item0" -> poseStack.translate(0.375f, 1.94, 0.375);
-                        case "item1" -> poseStack.translate(0f, 1.94, 0.375);
+                        case "item0" -> poseStack.translate(0.375, 1.94, 0.375);
+                        case "item1" -> poseStack.translate(0, 1.94, 0.375);
                         case "item2" -> poseStack.translate(-0.375, 1.94, 0.375);
 
-                        case "item3" -> poseStack.translate(0.375, 1.94, 0f);
-                        case "item4" -> poseStack.translate(0f, 1.94, 0f);
-                        case "item5" -> poseStack.translate(-0.375, 1.94, 0f);
+                        case "item3" -> poseStack.translate(0.375, 1.94, 0);
+                        case "item4" -> poseStack.translate(0, 1.94, 0);
+                        case "item5" -> poseStack.translate(-0.375, 1.94, 0);
 
                         case "item6" -> poseStack.translate(0.375, 1.94, -0.375);
-                        case "item7" -> poseStack.translate(0f, 1.94, -0.375);
+                        case "item7" -> poseStack.translate(0, 1.94, -0.375);
                         case "item8" -> poseStack.translate(-0.375, 1.94, -0.375);
                     }
+                    poseStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(animatable.getFacing()));
+
                 } else {
-                    switch (bone.getName()) {
-                        case "item0" -> poseStack.translate(0.187f, 1.005, 0.156f);
-                        case "item1" -> poseStack.translate(0f, 1.005, 0.156f);
-                        case "item2" -> poseStack.translate(-0.187f, 1.005, 0.156f);
-
-                        case "item3" -> poseStack.translate(0.187f, 1.005, -0.032f);
-                        case "item4" -> poseStack.translate(0f, 1.005, -0.032f);
-                        case "item5" -> poseStack.translate(-0.187f, 1.005, -0.032f);
-
-                        case "item6" -> poseStack.translate(0.187f, 1.005, -0.22f);
-                        case "item7" -> poseStack.translate(0f, 1.005, -0.22f);
-                        case "item8" -> poseStack.translate(-0.187f, 1.005   , -0.22f);
-                    }
                     poseStack.scale(0.25f, 0.25f, 0.25f);
-                    poseStack.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90f));
+                    switch (bone.getName()) {
+                        case "item0" -> poseStack.translate(0.75, 4, 0.625);
+                        case "item1" -> poseStack.translate(0, 4, 0.625);
+                        case "item2" -> poseStack.translate(-0.75, 4, 0.625);
+
+                        case "item3" -> poseStack.translate(0.75, 4, -0.125);
+                        case "item4" -> poseStack.translate(0, 4, -0.125);
+                        case "item5" -> poseStack.translate(-0.75, 4, -0.125);
+
+                        case "item6" -> poseStack.translate(0.75, 4, -0.874);
+                        case "item7" -> poseStack.translate(0, 4, -0.874);
+                        case "item8" -> poseStack.translate(-0.75, 4, -0.874);
+                    }
+                    poseStack.multiply(RotationAxis.NEGATIVE_Y.rotationDegrees(animatable.getFacing()));
                 }
                 poseStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(animatable.getFacing()));
+
+                if (!(stack.getItem() instanceof BlockItem)) {
+                    poseStack.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90f));
+                }
                 super.renderStackForBone(poseStack, bone, stack, animatable, bufferSource, partialTick, packedLight, packedOverlay);
             }
         });

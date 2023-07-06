@@ -37,6 +37,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_SHINE_LOG).log(ModBlocks.STRIPPED_SHINE_LOG).wood(ModBlocks.STRIPPED_SHINE_WOOD);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_BARK_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_LEAVES);
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.SHINE_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);

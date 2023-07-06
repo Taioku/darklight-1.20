@@ -1,4 +1,4 @@
-// 1.20	2023-07-06T05:20:40.1334764	Darklight/Model Definitions
+// 1.20	2023-07-06T15:05:22.2110956	Darklight/Model Definitions
 bb8f9d8f30a5852db9a596f3163e9a9d42916ca1 assets\darklight\models\block\stripped_shine_log.json
 f6ad3429775aa33462eee15e09e41ed63761377c assets\darklight\models\block\shine_stone_bricks.json
 0c764ee34dfbb8c39745449fa3c55fb24978c3c5 assets\darklight\blockstates\shine_stone.json
@@ -34,6 +34,7 @@ cf42e3be6b1599b675947c2f5e056c3933e0e9ad assets\darklight\blockstates\shine_crac
 6113be45ac3af912b9bbb56b74109449eb681082 assets\darklight\blockstates\shine_leaves.json
 3037ae4507c5aa628b5a8be3113af1b6c11bf58a assets\darklight\models\block\devc.json
 83f0ced3576d1a94c209a90a659c4a314cba5569 assets\darklight\models\block\stripped_shine_wood.json
+ac4d7a5dd46357924cb465d2f4fd3bbb4c23a7c3 assets\darklight\models\block\shine_bark_planks.json
 075171ad0bb5d193990984fd0ce8b8a39c031a3c assets\darklight\models\block\deepslate_thun_ore.json
 6787de041e17226359c45d24ee71062c478c3aaa assets\darklight\models\item\shine_cracked_stone_bricks.json
 82dd67056672eace40b5d05a89afa80874674507 assets\darklight\models\block\thun_block.json
@@ -98,10 +99,12 @@ e517af5d0a8d3fa77dffe42d7b73374adb4f2f63 assets\darklight\models\block\stripped_
 7491e98ffb9170551e1463b57cf2f9dd7301ea53 assets\darklight\models\item\deva.json
 01b86ccb35de9d2c3b67351021493a11010f41ad assets\darklight\models\item\shine_tuff.json
 59b1a1d74009322c5f5825ba19c87b04c68e4579 assets\darklight\models\item\shine_dust.json
+891a9ec693209eb459ec53059145302c5f553af7 assets\darklight\blockstates\shine_bark_planks.json
 71660af5224ed6ea2f1ce155c5c03c63680066db assets\darklight\models\item\thun_ingot.json
 3b0e77027147012b9bf5d9282a11e049724bb612 assets\darklight\blockstates\thun_block.json
 9187f78d385209aff4a80767bee3b3a10ea6e6f6 assets\darklight\models\block\devd_mirrored.json
 df15ba8754f68e01ba56f38fb4b77966895c4afe assets\darklight\blockstates\stripped_shine_wood.json
+83c5c3d48e119b3a6db17171915bc61e8057cfed assets\darklight\models\item\shine_bark_planks.json
 e219bc1c69bcef799f90bbccef93cc39923e00ed assets\darklight\models\item\shine_planks.json
 f252e3c0557053ae256ec5178108e5e299cf7ba6 assets\darklight\models\item\shine_grass.json
 b55c7362feea46d9c0a54365b8d19699845dd4bb assets\darklight\models\item\thun_leggings.json

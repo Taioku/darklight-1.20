@@ -23,7 +23,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     HAT("hat", 40, Util.make(new EnumMap(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.HELMET, 2);
-    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0f, 0.2f, () -> Ingredient.ofItems(ModItems.THUN_INGOT));
+    }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1.0f, 0.0f, () -> Ingredient.ofItems(ModItems.REINFORCED_LEATHER));
 
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC;
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY;
