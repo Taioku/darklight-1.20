@@ -11,7 +11,7 @@
 		"homepage": "",
 		"sources": ""
 	},
-	"license": "MIT License",
+	"license": "MIT",
 	"icon": "assets/darklight/icon.png",
 	"environment": "*",
 	"entrypoints": {
