@@ -1,4 +1,4 @@
-// 1.20	2023-07-06T02:49:30.1260329	Darklight/Recipes
+// 1.20	2023-07-06T05:20:40.1274782	Darklight/Recipes
 407cc3fc1c83a822ef9acee8ed9fb8423329396d data\darklight\advancements\recipes\misc\raw_thun_from_smelting_thun_ore.json
 928c2af1ec694938e1c05e08717eb91d11269f47 data\darklight\recipes\thun_chestplate.json
 41001f89928044a88117702a6d126397e12ce551 data\darklight\recipes\thun_boots.json
@@ -16,6 +16,6 @@ ac7e87031e40bb0fcc6597d9564723d04e75e3df data\darklight\advancements\recipes\mis
 3fd5811170bfcd3262ecb4a3b5d3888f6c0b3ced data\darklight\recipes\infusion_table.json
 8815a61c6020e67059a88e9e8b8e61bdc2a753a1 data\darklight\recipes\raw_thun_from_smelting_thun_ore.json
 db4c2698ff2516803604a01b52e96e66afd9d1bf data\darklight\advancements\recipes\misc\thun_boots.json
-3a1f61c61bb363c86f50dbd6f90507f2e16f972c data\darklight\advancements\recipes\misc\reinforced_leather.json
 f7fa7cded7b8fb4f56e40aeb06ab9d6e00c7318f data\darklight\recipes\reinforced_leather.json
+3a1f61c61bb363c86f50dbd6f90507f2e16f972c data\darklight\advancements\recipes\misc\reinforced_leather.json
 15444241d53147f13833f3b0fd94b0964313e6c7 data\darklight\recipes\raw_thun_from_smelting_deepslate_thun_ore.json

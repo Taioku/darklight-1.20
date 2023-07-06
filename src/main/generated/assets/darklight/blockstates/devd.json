@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "darklight:block/devd"
+      },
+      {
+        "model": "darklight:block/devd_mirrored"
+      },
+      {
+        "model": "darklight:block/devd",
+        "y": 180
+      },
+      {
+        "model": "darklight:block/devd_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

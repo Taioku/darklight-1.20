@@ -19,6 +19,15 @@ import net.taioku.darklight.world.tree.ShineSaplingGenerator;
 
 public class ModBlocks {
 
+    public static final Block DEVA = registerBlock("deva",
+            new Block(AbstractBlock.Settings.create()), ModItemGroup.DARKLIGHT);
+    public static final Block DEVB = registerBlock("devb",
+            new Block(AbstractBlock.Settings.create()), ModItemGroup.DARKLIGHT);
+    public static final Block DEVC = registerBlock("devc",
+            new Block(AbstractBlock.Settings.create()), ModItemGroup.DARKLIGHT);
+    public static final Block DEVD = registerBlock("devd",
+            new Block(AbstractBlock.Settings.create()), ModItemGroup.DARKLIGHT);
+
     public static final Block THUN_ORE = registerBlock("thun_ore",
             new Block(AbstractBlock.Settings.create().strength(4.0f).requiresTool()), ModItemGroup.DARKLIGHT);
     public static final Block DEEPSLATE_THUN_ORE = registerBlock("deepslate_thun_ore",
