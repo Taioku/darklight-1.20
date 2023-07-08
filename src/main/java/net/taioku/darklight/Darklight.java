@@ -13,6 +13,7 @@ import net.taioku.darklight.networking.ModPackets;
 import net.taioku.darklight.recipe.ModRecipes;
 import net.taioku.darklight.screen.ModScreenHandlers;
 import net.taioku.darklight.world.dimension.ModDimensions;
+import net.taioku.particle.ModParticles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib.GeckoLib;
@@ -42,6 +43,8 @@ public class Darklight implements ModInitializer {
 		ModScreenHandlers.registerAllScreenHandlers();
 
 		ModRecipes.registerRecipes();
+
+		ModParticles.registerParticles();
 
 		ModPackets.registerS2CPackets(); // Comment this for dataGen
 	}

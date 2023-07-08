@@ -2,6 +2,7 @@ package net.taioku.darklight;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -16,10 +17,15 @@ import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.screen.ModScreenHandlers;
 import net.taioku.darklight.screen.InfusionTable.InfusionTableScreen;
 import net.taioku.darklight.screen.mortar.MortarScreen;
+import net.taioku.particle.ClientParticles;
+import net.taioku.particle.ModParticles;
+import net.taioku.particle.custom.SoulParticle;
 
 public class DarklightClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		ClientParticles.registerClientParticles();
+
 		HandledScreens.register(ModScreenHandlers.MORTAR_SCREEN_HANDLER, MortarScreen::new);
 		HandledScreens.register(ModScreenHandlers.INFUSION_TABLE, InfusionTableScreen::new);
 
