@@ -1,9 +1,9 @@
-package net.taioku.particle;
+package net.taioku.darklight.particle;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
-import net.taioku.particle.custom.FearParticle;
-import net.taioku.particle.custom.SoulParticle;
-import net.taioku.particle.custom.SunParticle;
+import net.taioku.darklight.particle.custom.FearParticle;
+import net.taioku.darklight.particle.custom.SoulParticle;
+import net.taioku.darklight.particle.custom.SunParticle;
 
 public class ClientParticles {
         public static void registerClientParticles () {

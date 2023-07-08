@@ -1,4 +1,4 @@
-package net.taioku.particle;
+package net.taioku.darklight.particle;
 
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.particle.DefaultParticleType;

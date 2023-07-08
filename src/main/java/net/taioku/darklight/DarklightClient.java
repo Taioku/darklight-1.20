@@ -2,7 +2,6 @@ package net.taioku.darklight;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -12,14 +11,11 @@ import net.minecraft.util.Identifier;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.block.entity.ModBlockEntities;
 import net.taioku.darklight.block.client.*;
-import net.taioku.darklight.block.entity.tile.SteamTreaterBlockEntity;
 import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.screen.ModScreenHandlers;
 import net.taioku.darklight.screen.InfusionTable.InfusionTableScreen;
 import net.taioku.darklight.screen.mortar.MortarScreen;
-import net.taioku.particle.ClientParticles;
-import net.taioku.particle.ModParticles;
-import net.taioku.particle.custom.SoulParticle;
+import net.taioku.darklight.particle.ClientParticles;
 
 public class DarklightClient implements ClientModInitializer {
 	@Override
