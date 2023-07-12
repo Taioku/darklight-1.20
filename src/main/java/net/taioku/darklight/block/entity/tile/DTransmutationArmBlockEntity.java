@@ -44,14 +44,14 @@ public class DTransmutationArmBlockEntity extends BlockEntity implements GeoBloc
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         nbt.putBoolean("animState", hasAnimationFinished); // no puedo obtener el estado de la animacion fuera del predicado.
-        Darklight.LOGGER.info("\n\nwriteNbt" + "\n" + nbt.getBoolean("animState"));
+        //Darklight.LOGGER.info("\n\nwriteNbt" + "\n" + nbt.getBoolean("animState"));
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         nbt.getBoolean("animState");
-        Darklight.LOGGER.info("\n\nreadNbt" + "\n" + nbt.getBoolean("animState"));
+        //Darklight.LOGGER.info("\n\nreadNbt" + "\n" + nbt.getBoolean("animState"));
     }
 
     @Override

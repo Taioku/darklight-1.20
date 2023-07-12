@@ -1,4 +1,4 @@
-// 1.20	2023-07-06T15:05:22.2110956	Darklight/Model Definitions
+// 1.20	2023-07-12T01:43:42.7220591	Darklight/Model Definitions
 bb8f9d8f30a5852db9a596f3163e9a9d42916ca1 assets\darklight\models\block\stripped_shine_log.json
 f6ad3429775aa33462eee15e09e41ed63761377c assets\darklight\models\block\shine_stone_bricks.json
 0c764ee34dfbb8c39745449fa3c55fb24978c3c5 assets\darklight\blockstates\shine_stone.json
@@ -51,8 +51,8 @@ d9f2823e909777593a01132e24114218749dea61 assets\darklight\models\item\shine_log.
 4f80c52d38892f3e2266a421b13c8ff5167707e5 assets\darklight\models\block\shine_polished_deepslate.json
 a09aa13fe3b60a5094c233c96a9b4608b3a97a75 assets\darklight\models\item\thun_chestplate.json
 8ea78e84695c0635e05944e811d4ec59ff652889 assets\darklight\models\item\shine_cracked_deepslate_tiles.json
-116415e79b1f3c7b71b3a7491ff098f166845a92 assets\darklight\blockstates\shine_cobbled_deepslate.json
 d6ee1e28b272b457cab1ea29e21232197f9ea769 assets\darklight\models\block\shine_stone.json
+116415e79b1f3c7b71b3a7491ff098f166845a92 assets\darklight\blockstates\shine_cobbled_deepslate.json
 06a25c60a4a231392a248366c2089a78cc923ef6 assets\darklight\models\item\shine_bottle.json
 d0a8c0df66ed6a36a9866ca633ed7da7a08e30f1 assets\darklight\models\item\shine_stone.json
 6c739ad2c0789c7b45931f7f841b62eff0423d80 assets\darklight\models\item\shine_sapling.json
@@ -114,5 +114,6 @@ f1cb8b28046b23e896394f4faea6adfe583dfe71 assets\darklight\blockstates\shine_plan
 f462b2e79ee693584578ee683b75d58b4d759b87 assets\darklight\models\block\shine_tall_grass_bottom.json
 d4934a65bdc0552e7e02564018843faa7ff4c9b7 assets\darklight\models\block\shine_tall_grass_top.json
 32715f4dae4974333eadbfef7fe9eb2de6b21f5f assets\darklight\models\item\shine_dirt.json
+508023f239dd01213ccfbe27504d4d268a5a8d37 assets\darklight\models\item\lightbug_spawn_egg.json
 59f7351bf725923db05e6175e53ec64c701568d7 assets\darklight\models\block\shine_calcite.json
 40e602dd3d69a1202a988088f1a54e77c4f87ee2 assets\darklight\blockstates\devb.json

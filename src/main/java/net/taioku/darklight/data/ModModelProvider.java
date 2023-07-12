@@ -11,6 +11,7 @@ import net.minecraft.util.math.Direction;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
 import net.taioku.darklight.fluid.ModFluids;
+import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
 import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 
@@ -68,6 +69,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_POLISHED_DEEPSLATE);
         blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_CHISELED_DEEPSLATE, TexturedModel.CUBE_ALL);
+
+        blockStateModelGenerator.registerParentedItemModel(ModItems.LIGHTBUG_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("lightbug_spawn_egg"));
     }
 
     @Override

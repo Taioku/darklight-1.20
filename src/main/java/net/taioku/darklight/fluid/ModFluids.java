@@ -14,6 +14,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
+import net.taioku.darklight.fluid.custom.ShineWaterFluid;
 import net.taioku.darklight.item.ModItemGroup;
 
 public class ModFluids {

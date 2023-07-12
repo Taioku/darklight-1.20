@@ -1,6 +1,7 @@
-package net.taioku.darklight.block;
+package net.taioku.darklight.block.tags;
 
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.taioku.darklight.block.ModBlocks;
 
 public class ModFlammableBlockRegisty {
     public static void registerFlammableBlocks() {

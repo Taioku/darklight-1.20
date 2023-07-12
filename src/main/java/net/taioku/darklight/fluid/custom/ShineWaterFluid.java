@@ -1,4 +1,4 @@
-package net.taioku.darklight.fluid;
+package net.taioku.darklight.fluid.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -7,7 +7,6 @@ import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
-import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -18,6 +17,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.taioku.darklight.fluid.ModFluids;
 
 import java.util.Optional;
 

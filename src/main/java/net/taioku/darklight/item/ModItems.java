@@ -2,19 +2,20 @@ package net.taioku.darklight.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterials;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.taioku.darklight.Darklight;
 import net.taioku.darklight.block.ModBlocks;
+import net.taioku.darklight.entity.ModEntities;
 import net.taioku.darklight.item.custom.*;
 
 public class ModItems {
+
+    public static final Item LIGHTBUG_SPAWN_EGG = registerItem("lightbug_spawn_egg",
+            new SpawnEggItem(ModEntities.LIGHTBUG, 0xD57E36, 0x1D0D00, new FabricItemSettings()));
 
     public static final Item RAW_THUN = registerItem("raw_thun",
             new RawThun(new FabricItemSettings()));
@@ -74,6 +75,8 @@ public class ModItems {
 
     public static void addItemsToItemGroup() {
         addToItemGroup(ModItemGroup.DARKLIGHT, KALEIDOSCOPE);
+
+        addToItemGroup(ModItemGroup.DARKLIGHT, LIGHTBUG_SPAWN_EGG);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);

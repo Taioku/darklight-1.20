@@ -5,6 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.util.math.ColorHelper;
 
 import static org.apache.commons.lang3.RandomUtils.nextInt;
 
@@ -15,17 +16,22 @@ public class FearParticle extends SpriteBillboardParticle {
         super(world, x, y, z, xVel, yVel, zVel);
 
         this.spriteProvider = spriteProvider;
-        this.maxAge = 200; // 20s
         this.scale = 0.1f;
+        this.setAlpha(1.0f);
+        this.maxAge = 200;
+        this.setSpriteForAge(spriteProvider);
+        this.collidesWithWorld = true;
         this.velocityX = xVel;
         this.velocityY = 0.02f;
         this.velocityZ = zVel;
         this.x = x;
         this.y = y;
         this.z = z;
-        this.collidesWithWorld = true;
-        this.alpha = 1.0f;
-        this.setSpriteForAge(spriteProvider); //Required
+    }
+
+    @Override
+    public int getBrightness(float tint) {
+        return 255;
     }
 
     @Override
@@ -36,7 +42,6 @@ public class FearParticle extends SpriteBillboardParticle {
         } else {
             if (this.age >= this.maxAge / 3) {
                 this.scale -= 0.005f; //Slowly decreases the particle's size
-                this.alpha -= 0.005f; //Slowly fades away
             }
             this.move(this.velocityX, this.velocityY, this.velocityZ);
             this.setSpriteForAge(this.spriteProvider); //Animates the particle if needed
@@ -51,12 +56,12 @@ public class FearParticle extends SpriteBillboardParticle {
         public Factory(SpriteProvider spriteProvider) {
             this.sprites = spriteProvider;
         }
+
         public Particle createParticle(DefaultParticleType defaultParticleType, ClientWorld clientWorld, double x, double y, double z, double velX, double velY, double velZ) {
-            if (nextInt(0,15) == 0) {
+            if (nextInt(0, 15) == 0) {
                 return new FearParticle(clientWorld, x, y, z, velX, velY, velZ, this.sprites);
-            } else {
-                return null;
             }
+            return null;
         }
     }
 

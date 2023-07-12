@@ -3,9 +3,10 @@ package net.taioku.darklight;
 import net.fabricmc.api.ModInitializer;
 
 import net.taioku.darklight.block.ModBlocks;
-import net.taioku.darklight.block.ModFlammableBlockRegisty;
-import net.taioku.darklight.block.ModStrippableBlockRegistry;
+import net.taioku.darklight.block.tags.ModFlammableBlockRegisty;
+import net.taioku.darklight.block.tags.ModStrippableBlockRegistry;
 import net.taioku.darklight.block.entity.ModBlockEntities;
+import net.taioku.darklight.entity.ModEntities;
 import net.taioku.darklight.fluid.ModFluids;
 import net.taioku.darklight.item.ModItemGroup;
 import net.taioku.darklight.item.ModItems;
@@ -25,27 +26,20 @@ public class Darklight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		GeckoLib.initialize();
+
 		ModItemGroup.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-
 		ModBlockEntities.registerAllBlockEntities();
-
-		GeckoLib.initialize();
-
 		ModDimensions.register();
-
 		ModFlammableBlockRegisty.registerFlammableBlocks();
 		ModStrippableBlockRegistry.registerStrippableBlocks();
-
 		ModFluids.register();
-
 		ModScreenHandlers.registerAllScreenHandlers();
-
 		ModRecipes.registerRecipes();
-
 		ModParticles.registerParticles();
-
+		ModEntities.setAttributes();
 		ModPackets.registerS2CPackets(); // Comment this for dataGen
 	}
 }
