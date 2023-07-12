@@ -70,11 +70,4 @@ public class InfusionTableScreenHandler extends ScreenHandler {
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
     }
-
-    @Override
-    public void onSlotClick(int slotIndex, int button, SlotActionType actionType, PlayerEntity player) {
-        super.onSlotClick(slotIndex, button, actionType, player);
-        Darklight.LOGGER.info("slot: " + slotIndex +
-                "\naction Type" + actionType);
-    }
 }

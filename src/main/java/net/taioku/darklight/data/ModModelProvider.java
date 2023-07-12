@@ -69,8 +69,6 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINE_POLISHED_DEEPSLATE);
         blockStateModelGenerator.registerAxisRotated(ModBlocks.SHINE_CHISELED_DEEPSLATE, TexturedModel.CUBE_ALL);
-
-        blockStateModelGenerator.registerParentedItemModel(ModItems.LIGHTBUG_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("lightbug_spawn_egg"));
     }
 
     @Override

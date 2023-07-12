@@ -123,7 +123,7 @@ public class LightbugEntity extends PathAwareEntity implements GeoEntity {
         public void start() {
             Random random = this.lightbug.getRandom();
             double d = this.lightbug.getX() + (double)((random.nextFloat() * 2.0f - 1.0f) * 16.0f);
-            double e = this.lightbug.getY() + (double)((random.nextFloat() * 2.0f - 1.0f) * 16.0f);
+            double e = this.lightbug.getY() + (double)((random.nextFloat() * 2.0f - 1.0f) * 4.0f);
             double f = this.lightbug.getZ() + (double)((random.nextFloat() * 2.0f - 1.0f) * 16.0f);
             this.lightbug.getMoveControl().moveTo(d, e, f, 0.005);
         }

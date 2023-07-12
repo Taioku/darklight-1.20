@@ -1,4 +1,4 @@
-// 1.20	2023-07-12T01:43:42.7220591	Darklight/Model Definitions
+// 1.20	2023-07-12T16:22:35.2761567	Darklight/Model Definitions
 bb8f9d8f30a5852db9a596f3163e9a9d42916ca1 assets\darklight\models\block\stripped_shine_log.json
 f6ad3429775aa33462eee15e09e41ed63761377c assets\darklight\models\block\shine_stone_bricks.json
 0c764ee34dfbb8c39745449fa3c55fb24978c3c5 assets\darklight\blockstates\shine_stone.json
@@ -11,8 +11,8 @@ acdac9e496a0c16f2bdad89642821dd5b7df6dc0 assets\darklight\models\item\shine_cobb
 f43e14f52af2ef436fcb26f2f23c46d047c32bc7 assets\darklight\models\block\shine_leaves.json
 ca89484439ae015b3ac6b9da2cd9139444e3c70d assets\darklight\models\block\shine_cobbled_deepslate.json
 8f53a8d7dbef8fad8adf55a6e6823a3e0db25b33 assets\darklight\models\item\shine_calcite.json
-2d27977b6f0466214933a7d39cf0c94314d7b38f assets\darklight\models\item\shine_tall_grass.json
 b924e4aaa3aca6b15ca54d960307f8500dfde83c assets\darklight\models\block\shine_sapling.json
+2d27977b6f0466214933a7d39cf0c94314d7b38f assets\darklight\models\item\shine_tall_grass.json
 991b10250e0459ea5ef63128a8f80b8f128d80d6 assets\darklight\models\item\devd.json
 9384420cb7b27c6b1f30e7d417499c51a358282a assets\darklight\models\item\devc.json
 0f775e84187cc8bb9c4227bf95fe1d6dae6d6397 assets\darklight\models\item\thun_block.json
@@ -84,8 +84,8 @@ fdee35df10d9cc1ad75c5fae26e07795d498c1e1 assets\darklight\models\item\thun_boots
 562a5ed7f17003a0caedbb084136c94871f8322b assets\darklight\models\block\shine_cracked_deepslate_bricks.json
 4d0bb4091c567d41f6edf9b07e2c0bc01466c95a assets\darklight\models\block\shine_deepslate.json
 1a5cedac502190b678df11215f6658c6a1307be5 assets\darklight\blockstates\shine_stone_bricks.json
-fdecd7ffe43b671eeff12e349e8df7473afa6764 assets\darklight\blockstates\thun_ore.json
 2c90a61ad251ad432854f69c39344eaa8d031e5d assets\darklight\blockstates\shine_grass.json
+fdecd7ffe43b671eeff12e349e8df7473afa6764 assets\darklight\blockstates\thun_ore.json
 232b60e06a3f77f96cdacd48b2e37667120c1bc9 assets\darklight\models\item\shine_deepslate_tiles.json
 4cd2a9c6dcfb25471f59fa363a5016f7e472ecfd assets\darklight\blockstates\stripped_shine_log.json
 7b60a03e7df35b4d745c7f48dd0cdfa4a31056cc assets\darklight\models\block\devb.json
@@ -114,6 +114,5 @@ f1cb8b28046b23e896394f4faea6adfe583dfe71 assets\darklight\blockstates\shine_plan
 f462b2e79ee693584578ee683b75d58b4d759b87 assets\darklight\models\block\shine_tall_grass_bottom.json
 d4934a65bdc0552e7e02564018843faa7ff4c9b7 assets\darklight\models\block\shine_tall_grass_top.json
 32715f4dae4974333eadbfef7fe9eb2de6b21f5f assets\darklight\models\item\shine_dirt.json
-508023f239dd01213ccfbe27504d4d268a5a8d37 assets\darklight\models\item\lightbug_spawn_egg.json
 59f7351bf725923db05e6175e53ec64c701568d7 assets\darklight\models\block\shine_calcite.json
 40e602dd3d69a1202a988088f1a54e77c4f87ee2 assets\darklight\blockstates\devb.json

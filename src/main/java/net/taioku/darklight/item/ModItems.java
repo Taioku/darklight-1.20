@@ -15,7 +15,9 @@ import net.taioku.darklight.item.custom.*;
 public class ModItems {
 
     public static final Item LIGHTBUG_SPAWN_EGG = registerItem("lightbug_spawn_egg",
-            new SpawnEggItem(ModEntities.LIGHTBUG, 0xD57E36, 0x1D0D00, new FabricItemSettings()));
+            new SpawnEggItem(ModEntities.LIGHTBUG, 0x00FF00, 0x000000, new FabricItemSettings()));
+    public static final Item SOUL_SPAWN_EGG = registerItem("soul_spawn_egg",
+            new SpawnEggItem(ModEntities.SOUL, 0xEEEEEE, 0xFFFFFF, new FabricItemSettings()));
 
     public static final Item RAW_THUN = registerItem("raw_thun",
             new RawThun(new FabricItemSettings()));
@@ -77,6 +79,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, KALEIDOSCOPE);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, LIGHTBUG_SPAWN_EGG);
+        addToItemGroup(ModItemGroup.DARKLIGHT, SOUL_SPAWN_EGG);
 
         addToItemGroup(ModItemGroup.DARKLIGHT, RAW_THUN);
         addToItemGroup(ModItemGroup.DARKLIGHT, THUN_INGOT);

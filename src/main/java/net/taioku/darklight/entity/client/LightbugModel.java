@@ -5,6 +5,8 @@ import net.taioku.darklight.Darklight;
 import net.taioku.darklight.entity.custom.LightbugEntity;
 import software.bernie.geckolib.model.GeoModel;
 
+import static org.apache.commons.lang3.RandomUtils.nextInt;
+
 public class LightbugModel extends GeoModel<LightbugEntity> {
     @Override
     public Identifier getModelResource(LightbugEntity animatable) {
@@ -13,7 +15,7 @@ public class LightbugModel extends GeoModel<LightbugEntity> {
 
     @Override
     public Identifier getTextureResource(LightbugEntity animatable) {
-        return new Identifier(Darklight.MOD_ID, "textures/entity/lightbug.png");
+        return new Identifier(Darklight.MOD_ID, "textures/entity/lightbug/g_lightbug.png");
     }
 
     @Override
