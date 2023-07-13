@@ -18,6 +18,7 @@ public class ModBlockEntities {
     public static BlockEntityType<DTransmutationArmBlockEntity> D_TRANSMUTATION_ARM_ENTITY;
     public static BlockEntityType<InfusionTableBlockEntity> INFUSION_TABLE_ENTITY;
     public static BlockEntityType<SteamTreaterBlockEntity> STEAM_TREATER_ENTITY;
+    public static BlockEntityType<PressureCapBlockEntity> PRESSURE_CAP_ENTITY;
 
     public static void registerAllBlockEntities() {
         MORTAR_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
@@ -59,5 +60,10 @@ public class ModBlockEntities {
                 new Identifier(Darklight.MOD_ID, "steam_treater"),
                 FabricBlockEntityTypeBuilder.create(SteamTreaterBlockEntity::new,
                         ModBlocks.STEAM_TREATER).build());
+
+        PRESSURE_CAP_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(Darklight.MOD_ID, "pressure_cap"),
+                FabricBlockEntityTypeBuilder.create(PressureCapBlockEntity::new,
+                        ModBlocks.PRESSURE_CAP).build());
     }
 }

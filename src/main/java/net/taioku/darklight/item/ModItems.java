@@ -43,6 +43,8 @@ public class ModItems {
             new InfusionTableItem(ModBlocks.INFUSION_TABLE, new FabricItemSettings()));
     public static final Item STEAM_TREATER = registerItem("steam_treater",
             new SteamTreaterItem(ModBlocks.STEAM_TREATER, new FabricItemSettings()));
+    public static final Item PRESSURE_CAP = registerItem("pressure_cap",
+            new PressureCapItem(ModBlocks.PRESSURE_CAP, new FabricItemSettings()));
 
     public static final Item REINFORCED_LEATHER = registerItem("reinforced_leather",
             new Item(new FabricItemSettings()));
@@ -91,6 +93,7 @@ public class ModItems {
         addToItemGroup(ModItemGroup.DARKLIGHT, D_TRANSMUTATION_ARM);
         addToItemGroup(ModItemGroup.DARKLIGHT, INFUSION_TABLE);
         addToItemGroup(ModItemGroup.DARKLIGHT, STEAM_TREATER);
+        addToItemGroup(ModItemGroup.DARKLIGHT, PRESSURE_CAP);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_BOTTLE);
         addToItemGroup(ModItemGroup.DARKLIGHT, SHINE_DUST);
         addToItemGroup(ModItemGroup.DARKLIGHT, REINFORCED_LEATHER);

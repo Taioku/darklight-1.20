@@ -14,5 +14,6 @@ public class ClientBlocks {
         BlockEntityRendererFactories.register(ModBlockEntities.D_TRANSMUTATION_ARM_ENTITY, DTransmutationArmBlockRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.INFUSION_TABLE_ENTITY, InfusionTableBlockRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.STEAM_TREATER_ENTITY, SteamTreaterBlockRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.PRESSURE_CAP_ENTITY, PressureCapBlockRenderer::new);
     }
 }

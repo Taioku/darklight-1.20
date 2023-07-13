@@ -58,6 +58,9 @@ public class ModBlocks {
     public static final Block STEAM_TREATER = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "steam_treater"),
             new ModSteamTreaterBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool().sounds(BlockSoundGroup.ANVIL)));
 
+    public static final Block PRESSURE_CAP = Registry.register(Registries.BLOCK, new Identifier(Darklight.MOD_ID, "pressure_cap"),
+            new ModPressureCapBlock(AbstractBlock.Settings.create().strength(4.0f).requiresTool().sounds(BlockSoundGroup.ANVIL)));
+
     // -------------------------------------------------- SHINE --------------------------------------------------
 
     public static final Block SHINE_LOG = registerBlock("shine_log",
